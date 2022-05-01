@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(70,70,71,0.89);
+}
+
+.main_page {
+  background-color:rgba(248,248,249,0.89);
+  margin: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.top_menu {
+  margin: 20px;
+}
+
+.title {
+  padding: 20px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.search {
+  width: 75%;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(129, 129, 130, 0.71);
+  margin: 15px;
+}
+
+.search:hover {
+  background-color: rgba(215, 215, 215, 0.5);
+}
+
+button {
+  padding: 5px;
+  background-color: rgb(195, 195, 196);
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #6ac2db;
+  opacity: 0.8;
+}
+
+.area_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  display: block;
+}
+
+li {
+  padding: 5px;
+}
+
+.contact {
+  font-size: 26px;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(101,101,102,0.89);
+  opacity: 0.8;
+  z-index: 100;
+}
+
+.popup_addContact {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: #fff;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+.addContact {
+  margin: 30px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_box {
+  margin: 20px;
+}
+
+.addContact input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  padding: 10px;
+  background-color: rgba(215,215,216,0.89);
+  width: 70%;
+}
+
+.error_add {
+  display: none;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 2px;
+  padding-top: 2px;
+  color: rgba(56,56,57,0.89);
+}
+
+.create_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.popup_deleteContact {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: #fff;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+.search popup{
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_confirmDelete{
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: #fff;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+#contact_to_delete {
+  padding: 15px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#text {
+  padding: 30px;
+}
+
+#confirm {
+  margin: 10px;
+  padding: 15px;
+  background-color: rgb(217, 217, 217);
+  border-radius: 5px;
+  width: 60%;
+}
+
+.popup_edit{
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  background: #fff;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+.editContact {
+  padding: 20px;
+}
+
+.form_box {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.form_box label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form_box input {
+  padding: 10px;
+  width: 60%;
+  background-color: rgba(215,215,216,0.89);
+  border-radius: 5px;
+}
+
+.contact {
+  margin: 30px;
+  padding: 10px;
+}
+
+.buttons {
+  padding: 20px;
+}
+
+.save
+.back
+.edit {
+  padding: 15px;
+}

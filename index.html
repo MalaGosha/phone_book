@@ -3,21 +3,100 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Książka telefoniczna</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7d3919944a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+<div class="overlay"></div>
 
+<div class="main_page">
+  <div class="top_menu">
+    <div class="title">Książka telefoniczna</div>
+    <input class="search" placeholder="Wyszukaj po nazwie użytkownika lub numerze telefonu"/>
+    <button class="add"><i class="fa-solid fa-user-plus"></i> Dodaj kontakt</button>
+    <button class="delete"><i class="fas fa-trash-alt"></i> Usuń kontakt</button>
+  </div>
+  <div class="area_contacts"></div>
+</div>
 
+<div class="popup_deleteContact">
+  <div class="top_menu in_popup">
+    <input class="search popup"/>
+    <div class="area_contacts delete"></div>
+  </div>
+</div>
 
+<div class="popup_confirmDelete">
+  <div id="contact_to_delete"></div>
+  <div>
+    <span id="text">Zachowując poprawną pisownię wpisz nazwisko, potwierdzając usunięcie kontaktu</span>
+    <input id="confirm" type="text" placeholder="Wpisz nazwisko">
+    <p class="error"></p>
+  </div>
+</div>
 
+<div class="popup_addContact">
+  <form class="addContact">
+    <div class="form_box">
+      <label for="add_name">Imię:</label>
+      <input id="add_name" type="text" placeholder="Wpisz imię kontaktu"/>
+      <p class="error_add"></p>
+    </div>
+    <div class="form_box">
+      <label for="add_surname">Nazwisko: </label>
+      <input id="add_surname" type="text" placeholder="Wpisz nazwisko kontaktu"/>
+      <p class="error_add"></p>
+    </div>
+    <div class="form_box">
+      <label for="add_number">Numer telefonu:</label>
+      <input id="add_number" type="number" placeholder="Wpisz numer telefonu kontaktu"/>
+      <p class="error_add"></p>
+    </div>
+    <div class="create_contact">
+      <button class="create"><i class="fa-solid fa-circle-plus"></i> Stwórz kontakt</button>
+    </div>
+  </form>
+</div>
 
+<div class="popup_edit">
+  <div class="contact">
+    <form class="editContact">
+      <div class="form_box">
+        <label for="edit_name">Imię:</label>
+        <input type="text" id="edit_name" placeholder="Wpisz imię kontaktu"/>
+        <p class="error"></p>
+      </div>
+      <div class="form_box">
+        <label for="edit_surname">Nazwisko: </label>
+        <input type="text" id="edit_surname" placeholder="Wpisz nazwisko kontaktu"/>
+        <p class="error"></p>
+      </div>
+      <div class="form_box">
+        <label for="edit_number">Numer telefonu:</label>
+        <input id="edit_number" placeholder="Wpisz numer telefonu kontaktu"/>
+        <p class="error">wdsfghgfsfdghjtre</p>
+      </div>
+    </form>
+  </div>
+  <div class="buttons">
+    <button class="save"><i class="fa-solid fa-floppy-disk"></i> Zapisz</button>
+    <button class="edit"><i class="fa-solid fa-pen"></i> Edytuj</button>
+    <button class="back"><i class="fa-solid fa-arrow-left"></i> Wróć do formularza</button>
+  </div>
+</div>
 
-
-  <script src="js/script.js" async></script>
+  <script src="js/classes/Contact.js" async></script>
+  <script src="js/addContactBtn.js" async></script>
+  <script src="js/confirmDeleteContact.js" async></script>
+  <script src="js/deleteContacBtnt.js" async></script>
+  <script src="js/editContact.js" async></script>
+  <script src="js/generateHTML.js" async></script>
+  <script src="js/popupAddContact.js" async></script>
+  <script src="js/searchContact.js" async></script>
 </body>
 
 </html>
