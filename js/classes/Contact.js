@@ -24,6 +24,12 @@ class Contact {
 function addContact(contact) {
   contactsList.push(contact);
   console.log(contactsList);
-  clearHTMLAreaContacts();
-  generateHTMLContact(contactsList);
+  updateHtml(contactsList);
 }
+
+function removeContact(contact) {
+  contactsList = contactsList.filter(el => el.id !== contact.id);
+  updateHtml(contactsList);
+}
+
+

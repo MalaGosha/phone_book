@@ -25,15 +25,15 @@
 
 <div class="popup_deleteContact">
   <div class="top_menu in_popup">
-    <input class="search popup"/>
-    <div class="area_contacts delete"></div>
+    <input class="search popup" placeholder="Wyszukaj po nazwie użytkownika lub jego numerze telefonu kontakt do usunięcia"/>
+    <div class="area_contacts popupDelete"></div>
   </div>
 </div>
 
 <div class="popup_confirmDelete">
   <div id="contact_to_delete"></div>
   <div>
-    <span id="text">Zachowując poprawną pisownię wpisz nazwisko, potwierdzając usunięcie kontaktu</span>
+    <span id="text">Zachowując poprawną pisownię wpisz nazwisko, potwierdzając usunięcie kontaktu:</span>
     <input id="confirm" type="text" placeholder="Wpisz nazwisko">
     <p class="error"></p>
   </div>
@@ -89,14 +89,15 @@
   </div>
 </div>
 
-  <script src="js/classes/Contact.js" async></script>
-  <script src="js/addContactBtn.js" async></script>
-  <script src="js/confirmDeleteContact.js" async></script>
-  <script src="js/deleteContacBtnt.js" async></script>
-  <script src="js/editContact.js" async></script>
-  <script src="js/generateHTML.js" async></script>
-  <script src="js/popupAddContact.js" async></script>
-  <script src="js/searchContact.js" async></script>
+<script src="js/classes/Contact.js" async></script>
+<script src="js/addContactBtn.js" async></script>
+<script src="js/popupConfirmDeleteContact.js" async></script>
+<script src="js/deleteContactBtn.js" async></script>
+<script src="js/editContactBtn.js" async></script>
+<script src="js/generateHTML.js" async></script>
+<script src="js/popupAddContact.js" async></script>
+<script src="js/searchContact.js" async></script>
+<script src="js/popupDeleteContact.js" async></script>
 </body>
 
 </html>
