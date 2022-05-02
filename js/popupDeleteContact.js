@@ -1,4 +1,5 @@
 const searchPopup = document.querySelector('.popup');
+const overlay2 = document.querySelector('.overlay2');
 
 const getIdContactToDelete = (divContact) => {
   const idContactToDelete = divContact.querySelector('#id');
@@ -14,6 +15,7 @@ const chooseContactToDelete = () => {
       const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
       popupConfirmDelete.style.display = 'block';
       overlay.style.display = 'block';
+      overlay2.style.display = 'block';
       getIdContactToDelete(divContact);
       clearError();
       clearInput();
@@ -22,7 +24,7 @@ const chooseContactToDelete = () => {
 }
 
 const searchContactToDelete = contact => {
-  searchContact(contact);
+  searchContactDelete(contact);
   chooseContactToDelete();
   getIdContactToDelete();
 }

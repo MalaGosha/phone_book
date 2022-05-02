@@ -1,5 +1,6 @@
 const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
 const deleteBtnConfirm = document.querySelector('.confirm');
+const escapeBtn = document.querySelector('.escape');
 
 const checkConfirm = () => {
   const inputConfirm = document.querySelector('#confirm');
@@ -18,10 +19,20 @@ const checkConfirm = () => {
   inputConfirm.addEventListener('click', clearError);
 }
 
-deleteBtnConfirm.addEventListener('click', checkConfirm);
+const closePopupConfirm = () => {
 
-overlay.addEventListener('click', event => {
   popupConfirmDelete.style.display = 'none';
+  overlay2.style.display = 'none';
+  const inputConfirm = document.querySelector('#confirm');
+  inputConfirm.innerHTML = '';
+}
+
+deleteBtnConfirm.addEventListener('click', checkConfirm);
+escapeBtn.addEventListener('click', closePopupConfirm)
+
+overlay2.addEventListener('click', event => {
+  popupConfirmDelete.style.display = 'none';
+  overlay2.style.display = 'block';
   popupDeleteContact.style.display = 'block';
   overlay.style.display = 'block';
 })
