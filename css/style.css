@@ -78,13 +78,9 @@ button:hover {
   border-radius: 7px;
 }
 
-ul {
-  list-style-type: none;
-  display: block;
-}
-
-li {
+span {
   padding: 5px;
+  margin: 5px;
 }
 
 .contact {
