@@ -1,24 +1,21 @@
-
+const confirm = document.querySelector('#confirm');
 const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
 
 
-const checkConfirm = () => {
-  const confirm = document.querySelector('#confirm');
-  const listContactsId = document.querySelectorAll('#id');
+const showNameSurnameToConfirm = (divContact) => {
+  const divContactToConfirmDelete = document.querySelector('#display_contact_to_delete');
+  divContactToConfirmDelete.innerHTML = divContact.innerText;
+  console.log("divContacttoDeleteConfirm " + divContactToConfirmDelete.innerHTML);
+  console.log("divInnerText " + divContact.innerText);
+}
 
-  listContactsId.forEach(id => {
-    if (id === confirm) {
-      console.log("blaksandsbdsjdsjhd")
-    }
-  })
-
-  console.log('confirmID to -' + confirm.id);
-  console.log('listContactsId - ' + listContactsId[0])
-
+const checkConfirm = (inputSurname, divContact) => {
+  //const surname = inputSurname.target.value.toLowerCase();
 
 }
 
-checkConfirm()
+
+confirm.addEventListener('keyup', checkConfirm);
 
 overlay.addEventListener('click', event => {
     popupConfirmDelete.style.display = 'none';

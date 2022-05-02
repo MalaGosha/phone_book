@@ -177,23 +177,31 @@ li {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 80%;
   background: rgb(150, 226, 252);
-  opacity: 0.95;
-  margin-top: 7%;
+  margin-top: 5%;
   z-index: 200;
   border-radius: 7px;
   box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
 }
 
-#contact_to_delete {
-  padding: 15px;
-  font-size: 28px;
+#display_contact_to_delete {
+  padding: 30px;
+  margin: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 
+#write_contact_to_delete {
+  padding: 7px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(23,100,120,0.89);
+}
+
 #text {
-  padding: 30px;
+  padding: 15px;
 }
 
 #confirm {
