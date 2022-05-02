@@ -42,8 +42,14 @@ body {
   background-color: rgba(215, 215, 215, 0.5);
 }
 
+.buttons {
+  display: flex;
+  margin-left: 40%;
+}
+
 button {
   padding: 5px;
+  margin: 10px;
   background-color: rgb(195, 195, 196);
   border-radius: 5px;
 }

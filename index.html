@@ -33,9 +33,13 @@
 <div class="popup_confirmDelete">
   <div id="display_contact_to_delete"></div>
   <div id="write_contact_to_delete">
-    <div id="text">Zachowując poprawną pisownię wpisz nazwisko, potwierdzając usunięcie kontaktu:</div>
+    <div id="text">Wpisz nazwisko, potwierdzając usunięcie kontaktu:</div>
     <input id="confirm" type="text" placeholder="Wpisz nazwisko">
     <p class="error"></p>
+  </div>
+  <div class="buttons">
+    <button class="escape" type="submit"><i class="fas fa-arrow-left"></i> Wyjdź</button>
+    <button class="delete confirm" type="submit"><i class="fas fa-trash-alt"></i> Usuń kontakt</button>
   </div>
 </div>
 
@@ -100,6 +104,7 @@
 <script src="js/popupAddContact.js" async></script>
 <script src="js/searchContact.js" async></script>
 <script src="js/popupDeleteContact.js" async></script>
+<script src="js/error.js" async></script>
 </body>
 
 </html>

@@ -21,15 +21,17 @@ class Contact {
   }
 }
 
+function getContactById(id){
+  let filter = contactsList.filter(el => el.id == id);// zwróci liste z 1 kontaktem
+  return filter[0]; //pobieramy ten kontakt
+}
+
 function addContact(contact) {
   contactsList.push(contact);
-  console.log(contactsList);
   updateHtml(contactsList);
 }
 
-function removeContact(contact) {
-  contactsList = contactsList.filter(el => el.id !== contact.id);
+function deleteContactById(id){
+  contactsList = contactsList.filter(el => el.id != id);
   updateHtml(contactsList);
 }
-
-

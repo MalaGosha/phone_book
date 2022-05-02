@@ -38,6 +38,17 @@ const generateHTMLContactToDelete = deleteList => {
   })
 }
 
+const generateHTMLConfirmContactToDelete = (id) => {
+  const divContactToConfirmDelete = document.querySelector('#display_contact_to_delete');
+  let contact = getContactById(id);
+
+  divContactToConfirmDelete.innerHTML =  `
+    <span id="deleted_Id" style="display: none"><tr> ${contact.id}</tr></span>
+    <span>${contact.name}</span>
+    <span>${contact.surname}</span>
+  `;
+}
+
 const clearHTMLAreaContacts = () => {
   areaContacts.innerHTML = '';
   areaContactsPopupDelete.innerHTML = '';

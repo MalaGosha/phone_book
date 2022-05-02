@@ -1,38 +1,27 @@
-const confirm = document.querySelector('#confirm');
 const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
+const deleteBtnConfirm = document.querySelector('.confirm');
 
+const checkConfirm = () => {
+  const inputConfirm = document.querySelector('#confirm');
+  const deletedId = document.querySelector('#deleted_Id');
+  let inputSurname = inputConfirm.value;
+  let id = deletedId.innerHTML;
+  let contactById = getContactById(id);
 
-const showNameSurnameToConfirm = (divContact) => {
- /* const divContactToConfirmDelete = document.querySelector('#display_contact_to_delete');
-  divContactToConfirmDelete.innerHTML = divContact.innerText;
-  console.log("divContacttoDeleteConfirm " + divContactToConfirmDelete.innerHTML);
-  console.log("divInnerText " + divContact.innerText);*/
-
-  const divContactToConfirmDelete = document.querySelector('#display_contact_to_delete');
-  const name = divContact.querySelector('#name');
-  const surname = divContact.querySelector('#surname');
-  console.log('name' + name.innerHTML);
-  console.log('surname' + surname.innerHTML);
-  divContactToConfirmDelete.innerHTML= `
-    <span>${name.innerHTML}</span>
-    <span>${surname.innerHTML}</span>
-  `
-
-
-
-
+  if (inputSurname === contactById.surname) {
+    deleteContactById(id);
+    popupConfirmDelete.style.display = 'none';
+    chooseContactToDelete();
+  } else {
+    showError();
+  }
+  inputConfirm.addEventListener('click', clearError);
 }
 
-const checkConfirm = (inputSurname, divContact) => {
-  //const surname = inputSurname.target.value.toLowerCase();
-
-}
-
-
-confirm.addEventListener('keyup', checkConfirm);
+deleteBtnConfirm.addEventListener('click', checkConfirm);
 
 overlay.addEventListener('click', event => {
-    popupConfirmDelete.style.display = 'none';
-    popupDeleteContact.style.display = 'block';
-    overlay.style.display = 'block';
+  popupConfirmDelete.style.display = 'none';
+  popupDeleteContact.style.display = 'block';
+  overlay.style.display = 'block';
 })

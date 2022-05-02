@@ -1,13 +1,20 @@
 const search = document.querySelector('.search');
 
 const searchContact = e => {
-  const li = document.querySelectorAll('li');
-  console.log(li);
+  const areaContact = document.querySelectorAll('.area_contact');
+  const areaContactDelete = document.querySelectorAll('.area_contactDelete');
 
   const searchValue = e.target.value.toLowerCase();
-  console.log(searchValue)
 
-  li.forEach(el => {
+  areaContact.forEach(el => {
+    if(el.textContent.indexOf(searchValue) !== -1) {
+      el.style.display = 'flex';
+    } else {
+      el.style.display = 'none';
+    }
+  })
+
+  areaContactDelete.forEach(el => {
     if(el.textContent.indexOf(searchValue) !== -1) {
       el.style.display = 'flex';
     } else {
