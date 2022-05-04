@@ -15,16 +15,15 @@ const closePopup = () => {
 }
 
 function createNewContact(){
-  console.log(contactPhoneNumber.value);
   let handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
   addContact(handleContact);
-  closePopup()
+  closePopup();
+  refreshMockup();
 }
 
 
 createContactBtn.addEventListener('click', e => {
   e.preventDefault();
-
   createNewContact();
-
 });
+

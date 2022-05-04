@@ -121,7 +121,7 @@ span {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 30%;
   background: #fff;
   margin-top: 10%;
   z-index: 200;
@@ -140,14 +140,21 @@ span {
   margin: 20px;
 }
 
+.form_box input {
+  width: auto;
+}
+
+i {
+  margin-right: -5px;
+  margin-left: 10px;
+}
+
 .addContact input{
   display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 7px;
   padding: 10px;
+  width: auto;
   background-color: rgba(215,215,216,0.89);
-  width: 70%;
 }
 
 .error_add {
@@ -191,7 +198,7 @@ span {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 30%;
   background: rgb(182, 231, 248);
   margin-top: 5%;
   z-index: 200;
@@ -226,7 +233,7 @@ span {
   background-color: rgb(229, 229, 229);
   opacity: 0.95;
   border-radius: 5px;
-  width: 60%;
+  width: auto;
 }
 
 .error {
@@ -242,7 +249,7 @@ span {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 45%;
   background: #fff;
   margin-top: 10%;
   z-index: 200;
@@ -266,22 +273,27 @@ span {
 
 .form_box input {
   padding: 10px;
-  width: 60%;
+  width: 100%;
   background-color: rgba(215,215,216,0.89);
   border-radius: 5px;
 }
 
 .contact {
-  margin: 30px;
+  margin: 20px;
   padding: 10px;
 }
 
 .buttons {
   padding: 20px;
+  margin-left: 10px;
 }
 
 .save
 .back
 .edit {
   padding: 15px;
+}
+
+.save{
+  display: none;
 }

@@ -9,10 +9,10 @@ const generateHTMLContact = (list) => {
     areaContacts.innerHTML = `
         ${innerHTML}
       <div class="area_contact" id= ${"contact_" + counter}>
-        <i class="fa-solid fa-phone"></i>
         <span id="id" style="display: none"> ${contact.id}</span>
         <span id="name"> ${contact.name}</span>
         <span id="surname"> ${contact.surname}</span>
+        <i class="fa-solid fa-phone"></i>
         <span id="phone_number"> ${contact.phoneNumber}</span>
       </div>
     `
@@ -27,10 +27,10 @@ const generateHTMLContactToDelete = deleteList => {
     areaContactsPopupDelete.innerHTML = `
         ${innerHTML}
       <div class="area_contactDelete" id= ${"contact_" + counter}>
-        <i class="fas fa-trash-alt"></i>
         <span id="id" style="display: none"><tr> ${contact.id}</tr></span>
         <span id="name"> ${contact.name}</span>
         <span id="surname"> ${contact.surname}</span>
+        <i class="fas fa-trash-alt"></i>
         <span id="phone_number"> ${contact.phoneNumber}</span>
       </div>
     `

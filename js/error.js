@@ -8,7 +8,6 @@ const clearError = () => {
   error.innerHTML = "";
 }
 
-
 const clearInput = () => {
   searchPopup.innerHTML = '';
   search.innerHTML = '';
