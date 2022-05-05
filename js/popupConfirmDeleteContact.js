@@ -2,8 +2,6 @@ const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
 const deleteBtnConfirm = document.querySelector('.confirm');
 const escapeBtn = document.querySelector('.escape');
 
-
-
 const checkConfirm = () => {
   const inputConfirm = document.querySelector('#confirm');
   const deletedId = document.querySelector('#deleted_Id');
