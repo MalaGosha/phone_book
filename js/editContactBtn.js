@@ -1,3 +1,7 @@
+let editList = [];
+let contact;
+let idToEdit;
+
 const backToMockup = () => {
   const popupEdit = document.querySelector('.popup_edit');
   popupEdit.style.display = 'none';
@@ -5,7 +9,24 @@ const backToMockup = () => {
 }
 
 const saveChanges = () => {
-  const
+  const newName = document.querySelector('#edit_name');
+  const newSurname = document.querySelector('#edit_surname');
+  const newPhoneNumber = document.querySelector('#edit_number');
+
+  contact = getContactById(idToEdit);
+
+  if (newName.value !== '') {
+    contact.name = newName.value;
+  }
+  if (newSurname.value !== '') {
+    contact.surname = newSurname.value;
+  }
+  if (newPhoneNumber.value !== '') {
+    contact.phoneNumber = newPhoneNumber.value;
+  }
+
+  updateHtml();
+  backToMockup();
 }
 
 const showSaveBtn = () => {
@@ -17,7 +38,7 @@ const showSaveBtn = () => {
 const changeInput = () => {
   const inputs = document.querySelectorAll('input');
   inputs.forEach(input => {
-    input.addEventListener('keyup', e=> {
+    input.addEventListener('keyup', () => {
       if (input.value !== '') {
         showSaveBtn();
       }
@@ -33,7 +54,7 @@ const noEditForm = (editList) => {
   })
 
   const editBtn = document.querySelector('.edit');
-  editBtn.addEventListener('click', e => {
+  editBtn.addEventListener('click', () => {
     editList.forEach(el => {
       if (el.value == '') {
         el.disabled = false;
@@ -47,9 +68,9 @@ const writeContact = (id) => {
   const editName = document.querySelector('#edit_name');
   const editSurname = document.querySelector('#edit_surname');
   const editPhoneNumber = document.querySelector('#edit_number');
-  const editList = [editName, editSurname, editPhoneNumber];
+  editList = [editName, editSurname, editPhoneNumber];
 
-  let contact = getContactById(id);
+  contact = getContactById(id);
   editName.placeholder = contact.name;
   editSurname.placeholder = contact.surname;
   editPhoneNumber.placeholder = contact.phoneNumber;
@@ -59,27 +80,22 @@ const writeContact = (id) => {
 
 const getIdContactToEdit = (divContact) => {
   const idContactToEdit = divContact.querySelector('#id');
-  let idToEdit = idContactToEdit.innerHTML;
-  console.log('idContactToEdit z getIDContactToEdit to: ' + idToEdit)
+  idToEdit = idContactToEdit.innerHTML;
   writeContact(idToEdit);
-}
-
-const popupEditContact = () => {
-  const popupEdit = document.querySelector('.popup_edit');
-  popupEdit.style.display = 'block';
-  overlay.style.display = 'block';
-
-  const backBtn = document.querySelector('.back');
-  backBtn.addEventListener('click', backToMockup);
 }
 
 const refreshMockup = () => {
   const listAreaContacts = document.querySelectorAll('.area_contact');
   listAreaContacts.forEach(areaContact => {
-    areaContact.addEventListener('click', popupEditContact);
-    getIdContactToEdit(areaContact);
+    areaContact.addEventListener('click', () => {
+      const popupEdit = document.querySelector('.popup_edit');
+      popupEdit.style.display = 'block';
+      overlay.style.display = 'block';
+      const backBtn = document.querySelector('.back');
+      backBtn.addEventListener('click', backToMockup);
+      getIdContactToEdit(areaContact);
+    });
   })
-
 }
 
 

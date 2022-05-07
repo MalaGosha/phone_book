@@ -28,10 +28,21 @@ function getContactById(id){
 
 function addContact(contact) {
   contactsList.push(contact);
-  updateHtml(contactsList);
+  updateHtml();
 }
 
 function deleteContactById(id){
   contactsList = contactsList.filter(el => el.id != id);
-  updateHtml(contactsList);
+  updateHtml();
 }
+
+function getContactList(){
+  return contactsList;
+}
+
+
+
+/*function swapContact(contactAfterEdit){
+  contactsList = contactsList.);
+  updateHtml(contactsList);
+}*/

@@ -21,7 +21,6 @@ function createNewContact(){
   refreshMockup();
 }
 
-
 createContactBtn.addEventListener('click', e => {
   e.preventDefault();
   createNewContact();
