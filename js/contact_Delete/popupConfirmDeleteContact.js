@@ -15,7 +15,7 @@ const checkConfirm = () => {
     chooseContactToDelete();
     closePopupConfirm()
   } else {
-    showError();
+    showErrorCheckConfirm();
   }
   inputConfirm.addEventListener('click', clearError);
 }
@@ -31,11 +31,6 @@ const closePopupConfirm = () => {
 deleteBtnConfirm.addEventListener('click', checkConfirm);
 escapeBtn.addEventListener('click', closePopupConfirm)
 
-overlay2.addEventListener('click', event => {
-  popupConfirmDelete.style.display = 'none';
-  overlay2.style.display = 'block';
-  popupDeleteContact.style.display = 'block';
-  overlay.style.display = 'block';
-})
+
 
 

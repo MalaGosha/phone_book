@@ -42,3 +42,9 @@ window.addEventListener('keydown', event => {
   }
 })
 
+overlay2.addEventListener('click', event => {
+  popupConfirmDelete.style.display = 'none';
+  overlay2.style.display = 'block';
+  popupDeleteContact.style.display = 'block';
+  overlay.style.display = 'block';
+})
