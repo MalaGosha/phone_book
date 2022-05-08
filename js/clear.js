@@ -8,8 +8,8 @@ const clearErrorAddForm = (inputEl) => {
   const errorMsg = formBox.querySelector('.error_add');
   errorMsg.style.display = 'none';
   errorMsg.textContent = '';
-}
 
+}
 
 const clearInput = () => {
   searchPopup.innerHTML = '';

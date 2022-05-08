@@ -23,7 +23,6 @@ const createNewContact = () => {
 
 createContactBtn.addEventListener('click', e => {
   e.preventDefault();
-  //createNewContact();
   checkFormAddContact(formList);
 });
 
