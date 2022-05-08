@@ -11,3 +11,14 @@ const showErrorCheckAddContact = (inputEl, msg) => {
   errorMsg.textContent = msg;
   refreshFormAdd();
 }
+/*
+
+const showErrorCheckEditContact = (inputEl, msg) => {
+  const formBox = inputEl.parentElement;
+  const errorMsg = formBox.querySelector('.error');
+
+  errorMsg.style.display = 'block';
+  errorMsg.textContent = msg;
+  refreshFormEdit();``
+}
+*/

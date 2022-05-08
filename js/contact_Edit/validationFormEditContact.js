@@ -1,13 +1,12 @@
-
+/*
 const checkEditName = (newDateContactList) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
   let elementName = newDateContactList[0];
   let result = regExpName.test(elementName.value);
-  if (result) {
-    clearErrorAddForm(elementName);
-  } else {
-    showErrorCheckAddContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej litery')
-  }
+  console.log('AAAAAAAAaa');
+  console.log('newDatecontactList ' + newDateContactList);
+  console.log('elementNme ' + elementName);
+  console.log('el value' + elementName.value);
   return result;
 }
 
@@ -33,7 +32,7 @@ const checkInputFormEditContact = () => {
     console.log('contact.name ' + contact.name);
     console.log('id to edit ' + idToEdit);
     console.log('new name value' + newName.value);
-  }
+  }*/
   /*if (newSurname.value !== '') {
     checkSurname(newDateContactList);
   }
@@ -59,4 +58,14 @@ const checkInputFormEditContact = () => {
 
     saveChangeInEditContact();
   }*/
+
+/*
+
+const refreshFormEdit = () => {
+  const inputsDataAddContact = document.querySelectorAll('input');
+  inputsDataAddContact.forEach(el => {
+    el.addEventListener('keyup', () => {
+      clearErrorEditForm(el);
+    })
 }
+*/

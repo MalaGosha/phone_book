@@ -19,6 +19,15 @@ const clearErrorAddForm = (inputEl) => {
   errorMsg.innerHTML = '';
 }
 
+/*
+const clearErrorEditForm = (inputEl) => {
+  const formBox = inputEl.parentElement;
+  const errorMsg = formBox.querySelector('.error');
+  errorMsg.style.display = 'none';
+  errorMsg.innerHTML = '';
+}
+*/
+
 const clearInput = () => {
   searchPopup.innerHTML = '';
   search.innerHTML = '';
