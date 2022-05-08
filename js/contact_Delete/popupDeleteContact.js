@@ -21,7 +21,7 @@ const chooseContactToDelete = () => {
         overlay2.style.display = 'block';
         getIdContactToDelete(divContact);
         clearError();
-        clearInput();
+        clearInputs();
       });
     })
   }
@@ -42,8 +42,10 @@ window.addEventListener('keydown', event => {
     popupDeleteContact.style.display = 'none';
     popupAddContact.style.display = 'none';
     popupConfirmDelete.style.display = 'none';
+    popupEmptyBook.style.display = 'none';
     overlay.style.display = 'none';
     overlay2.style.display = 'none';
+    clearInputs();
   }
 })
 

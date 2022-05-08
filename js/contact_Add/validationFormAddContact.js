@@ -45,8 +45,7 @@ const checkInputFormAddContact = (arrayDataAddContact) => {
 }
 
 const refreshFormAdd = () => {
-  const inputsDataAddContact = document.querySelectorAll('input');
-  inputsDataAddContact.forEach(el => {
+  arrayDataAddContact.forEach(el => {
     el.addEventListener('keyup', () => {
       clearErrorAddForm(el);
     })

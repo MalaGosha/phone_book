@@ -26,15 +26,11 @@ const clearErrorEditForm = (inputEl) => {
 }
 */
 
-const clearInput = () => {
+const clearInputs = () => {
   searchPopup.innerHTML = '';
   search.innerHTML = '';
-  const inputConfirm = document.querySelector('#confirm');
-  inputConfirm.innerHTML = '';
-  const contactName = document.querySelector('#add_name');
-  contactName.innerHTML ='';
-  const contactSurname = document.querySelector('#add_surname');
-  contactSurname.innerHTML ='';
-  const contactPhoneNumber = document.querySelector('#add_number');
-  contactPhoneNumber.innerHTML = '';
+  const inputs = document.querySelectorAll('input');
+  inputs.forEach(input =>{
+    input.value = '';
+  })
 }
