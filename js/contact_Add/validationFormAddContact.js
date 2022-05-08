@@ -8,40 +8,49 @@ const getContact = (contactDateToAdd) => {
 const checkName = (formList) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
   let elementName = formList[0];
-  if (!regExpName.test(elementName.value)) {
-    showErrorCheckAddContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej litery')
-  } else {
+  let result = regExpName.test(elementName.value);
+  if (result) {
     clearErrorAddForm(elementName);
-    contactDateToAdd[0] = elementName.value;
-
+  } else {
+    showErrorCheckAddContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej litery')
   }
+  console.log('name' +result)
+  return result;
 }
 
 const checkSurname = (formList) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
   let elementSurname = formList[1];
-  if (!regExpSurname.test(elementSurname.value)) {
-    showErrorCheckAddContact(elementSurname, 'Nadaj nazwisko składające się od 3 do 20 liter')
-  } else {
+  let result = regExpSurname.test(elementSurname.value);
+  if (result) {
     clearErrorAddForm(elementSurname);
-    contactDateToAdd[1] = elementSurname.value;
+  } else {
+    showErrorCheckAddContact(elementSurname, 'Nadaj nazwisko składające się od 3 do 20 liter');
   }
+  console.log('surname' +result)
+  return result;
 }
 
 const checkPhoneNumber = (formList) => {
   const regExpPhoneNumber = /^(.[0-9]{8}$)/;
   let elementPhone = formList[2];
-  if (!regExpPhoneNumber.test(elementPhone.value)) {
-    showErrorCheckAddContact(elementPhone, 'Nadaj 9 cyfrowy numer telefonu')
-  } else {
+  let result = regExpPhoneNumber.test(elementPhone.value);
+  if (result) {
     clearErrorAddForm(elementPhone);
-    contactDateToAdd[2] = elementPhone.value;
+  } else {
+    showErrorCheckAddContact(elementPhone, 'Nadaj 9 cyfrowy numer telefonu')
   }
+  console.log('phone' +result)
+  return result;
 }
 const checkInputFormAddContact = (formList) => {
-  checkName(formList);
-  checkSurname(formList);
-  checkPhoneNumber(formList);
+  let resultName = checkName(formList);
+  let resultSurname = checkSurname(formList);
+  let resultPhoneNumber = checkPhoneNumber(formList);
+
+  if (resultName && resultSurname && resultPhoneNumber === true){
+    createNewContact();
+  }
 }
 
 const refreshFormAdd = () => {

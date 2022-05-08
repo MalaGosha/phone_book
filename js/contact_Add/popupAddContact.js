@@ -18,7 +18,6 @@ const createNewContact = () => {
   addContact(handleContact);
   closePopup();
   refreshMainPage();
-
 }
 
 createContactBtn.addEventListener('click', e => {
