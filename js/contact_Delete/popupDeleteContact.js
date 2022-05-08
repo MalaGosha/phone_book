@@ -10,17 +10,22 @@ const getIdContactToDelete = (divContact) => {
 const chooseContactToDelete = () => {
   const areaContactDelete = document.querySelectorAll('.area_contactDelete');
 
-  areaContactDelete.forEach(divContact => {
-    divContact.addEventListener("click", e => {
-      const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
-      popupConfirmDelete.style.display = 'block';
-      overlay.style.display = 'block';
-      overlay2.style.display = 'block';
-      getIdContactToDelete(divContact);
-      clearError();
-      clearInput();
-    });
-  })
+  if(areaContactDelete.length === 0) {
+    noShowPopupDeleteContact();
+  } else {
+    areaContactDelete.forEach(divContact => {
+      divContact.addEventListener("click", e => {
+        const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
+        popupConfirmDelete.style.display = 'block';
+        overlay.style.display = 'block';
+        overlay2.style.display = 'block';
+        getIdContactToDelete(divContact);
+        clearError();
+        clearInput();
+      });
+    })
+  }
+  ``
 }
 
 const searchContactToDelete = contact => {

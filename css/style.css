@@ -116,6 +116,23 @@ span {
   z-index: 200;
 }
 
+.empty_phoneBook {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  background: #fff;
+  padding: 30px;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+  color: #020242;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .popup_addContact {
   display: none;
   position: absolute;
@@ -204,6 +221,10 @@ i {
   z-index: 200;
   border-radius: 7px;
   box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+.popup_confirmDelete i {
+  padding: 5px
 }
 
 #display_contact_to_delete {

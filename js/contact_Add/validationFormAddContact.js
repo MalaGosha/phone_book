@@ -1,6 +1,6 @@
-const checkName = (formList) => {
+const checkName = (arrayDataAddContact) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
-  let elementName = formList[0];
+  let elementName = arrayDataAddContact[0];
   let result = regExpName.test(elementName.value);
   if (result) {
     clearErrorAddForm(elementName);
@@ -10,9 +10,9 @@ const checkName = (formList) => {
   return result;
 }
 
-const checkSurname = (formList) => {
+const checkSurname = (arrayDataAddContact) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
-  let elementSurname = formList[1];
+  let elementSurname = arrayDataAddContact[1];
   let result = regExpSurname.test(elementSurname.value);
   if (result) {
     clearErrorAddForm(elementSurname);
@@ -22,9 +22,9 @@ const checkSurname = (formList) => {
   return result;
 }
 
-const checkPhoneNumber = (formList) => {
+const checkPhoneNumber = (arrayDataAddContact) => {
   const regExpPhoneNumber = /^(.[0-9]{8}$)/;
-  let elementPhone = formList[2];
+  let elementPhone = arrayDataAddContact[2];
   let result = regExpPhoneNumber.test(elementPhone.value);
   if (result) {
     clearErrorAddForm(elementPhone);
@@ -33,32 +33,33 @@ const checkPhoneNumber = (formList) => {
   }
   return result;
 }
-const checkInputFormAddContact = (formList) => {
-  let resultName = checkName(formList);
-  let resultSurname = checkSurname(formList);
-  let resultPhoneNumber = checkPhoneNumber(formList);
+const checkInputFormAddContact = (arrayDataAddContact) => {
+  let resultName = checkName(arrayDataAddContact);
+  let resultSurname = checkSurname(arrayDataAddContact);
+  let resultPhoneNumber = checkPhoneNumber(arrayDataAddContact);
 
   if (resultName && resultSurname && resultPhoneNumber === true){
     createNewContact();
+    clearAllErrors();
   }
 }
 
 const refreshFormAdd = () => {
-  const inputsAddContact = document.querySelectorAll('input');
-  inputsAddContact.forEach(el => {
+  const inputsDataAddContact = document.querySelectorAll('input');
+  inputsDataAddContact.forEach(el => {
     el.addEventListener('keyup', () => {
       clearErrorAddForm(el);
-      checkFormAddContact(inputsAddContact);
+      checkFormAddContact(inputsDataAddContact);
     })
   })
 }
 
-const checkFormAddContact = (formList) => {
-  formList.forEach(el => {
-    if (el.value === '') {
+const checkFormAddContact = (arrayDataAddContact) => {
+  arrayDataAddContact.forEach(el => {
+    if (el.value == '') {
       showErrorCheckAddContact(el, 'Uzupełnij pole');
     } else {
-      checkInputFormAddContact(formList);
+      checkInputFormAddContact(arrayDataAddContact);
     }
   })
 };

@@ -10,10 +10,10 @@ const checkConfirm = () => {
   let contactById = getContactById(id);
 
   if (inputSurname === contactById.surname) {
-    deleteContactById(id);
     popupConfirmDelete.style.display = 'none';
+    deleteContactById(id);
     chooseContactToDelete();
-    closePopupConfirm()
+    closePopupConfirm();
   } else {
     showErrorCheckConfirm();
   }
@@ -29,7 +29,7 @@ const closePopupConfirm = () => {
 }
 
 deleteBtnConfirm.addEventListener('click', checkConfirm);
-escapeBtn.addEventListener('click', closePopupConfirm)
+escapeBtn.addEventListener('click', closePopupConfirm);
 
 
 

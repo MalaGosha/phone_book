@@ -3,13 +3,13 @@ const contactSurname = document.querySelector("#add_surname");
 const contactPhoneNumber = document.querySelector("#add_number");
 const createContactBtn = document.querySelector('.create');
 
-let formList = [contactName, contactSurname, contactPhoneNumber];
+let arrayDataAddContact = [contactName, contactSurname, contactPhoneNumber];
 
 const closePopup = () => {
   popupAddContact.style.display = 'none';
   overlay.style.display = 'none';
-  formList.forEach(elList => {
-    elList.value = '';
+  arrayDataAddContact.forEach(elementData => {
+    elementData.value = '';
   })
 }
 
@@ -22,6 +22,6 @@ const createNewContact = () => {
 
 createContactBtn.addEventListener('click', e => {
   e.preventDefault();
-  checkFormAddContact(formList);
+  checkFormAddContact(arrayDataAddContact);
 });
 

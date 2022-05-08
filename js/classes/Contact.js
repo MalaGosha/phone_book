@@ -41,8 +41,3 @@ function getContactList(){
 }
 
 
-
-/*function swapContact(contactAfterEdit){
-  contactsList = contactsList.);
-  updateHtml(contactsList);
-}*/
