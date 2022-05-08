@@ -3,10 +3,9 @@ const clearError = () => {
   error.innerHTML = "";
 }
 
-const clearAllErrors = () => {
+const clearAllErrorsAddForm = () => {
   const errors = document.querySelectorAll('.error_add');
   errors.forEach(el => {
-    console.log(el);
     el.style.display = 'none';
     el.innerHTML = '';
   })
@@ -15,7 +14,6 @@ const clearAllErrors = () => {
 const clearErrorAddForm = (inputEl) => {
   const formBox = inputEl.parentElement;
   const errorMsg = formBox.querySelector('.error_add');
-  errorMsg.style.display = 'none';
   errorMsg.innerHTML = '';
 }
 

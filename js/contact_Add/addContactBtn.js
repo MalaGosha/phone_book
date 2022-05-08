@@ -5,7 +5,7 @@ const overlay = document.querySelector('.overlay');
 const showPopupAddContact = () => {
   popupAddContact.style.display = 'block';
   overlay.style.display = 'block';
-  clearAllErrors();
+  clearAllErrorsAddForm();
 }
 
 addContactBtn.addEventListener('click', showPopupAddContact);

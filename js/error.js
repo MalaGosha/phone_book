@@ -6,9 +6,8 @@ const showErrorCheckConfirm = () => {
 const showErrorCheckAddContact = (inputEl, msg) => {
   const formBox = inputEl.parentElement;
   const errorMsg = formBox.querySelector('.error_add');
-
   errorMsg.style.display = 'block';
-  errorMsg.textContent = msg;
+  errorMsg.innerHTML = msg;
   refreshFormAdd();
 }
 /*

@@ -40,7 +40,7 @@ const checkInputFormAddContact = (arrayDataAddContact) => {
 
   if (resultName && resultSurname && resultPhoneNumber === true){
     createNewContact();
-    clearAllErrors();
+    clearAllErrorsAddForm();
   }
 }
 
@@ -49,7 +49,6 @@ const refreshFormAdd = () => {
   inputsDataAddContact.forEach(el => {
     el.addEventListener('keyup', () => {
       clearErrorAddForm(el);
-      checkFormAddContact(inputsDataAddContact);
     })
   })
 }
