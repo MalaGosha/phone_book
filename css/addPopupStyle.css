@@ -1,0 +1,56 @@
+.area_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.area_contact:hover {
+  background-color: #bde5f6;
+  border-radius: 7px;
+}
+
+.popup_addContact {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  background: #fff;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+.addContact {
+  margin: 30px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.addContact input{
+  display: flex;
+  border-radius: 7px;
+  padding: 10px;
+  width: 100%;
+  background-color: rgba(215,215,216,0.89);
+}
+
+.error_add {
+  display: none;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 2px;
+  padding-top: 2px;
+  color: rgba(56,56,57,0.89);
+}
+
+.create_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}

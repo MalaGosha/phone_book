@@ -1,0 +1,35 @@
+.error {
+  font-size: 16px;
+  color: rgb(108, 5, 15);
+  font-weight: lighter;
+  font-style: italic;
+  margin-left: 30px;
+}
+
+.popup_edit{
+  display: none;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  background: #fff;
+  margin-top: 10%;
+  z-index: 200;
+  border-radius: 7px;
+  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
+}
+
+.editContact {
+  padding: 20px;
+}
+
+.date {
+  display: inline-block;
+  font-size: 17px;
+  color: #343333;
+}
+
+#modificationDate {
+  display: none;
+  margin-top: 10px;
+}

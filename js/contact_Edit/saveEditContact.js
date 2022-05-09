@@ -14,3 +14,7 @@ const showSaveBtnAndEditDate = () => {
     showModificationDate();
   });
 }
+
+const hideSaveBtn = () => {
+  saveBtn.style.display = 'none';
+}

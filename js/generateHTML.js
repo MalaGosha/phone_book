@@ -27,10 +27,10 @@ const generateHTMLContactToDelete = deleteList => {
     areaContactsPopupDelete.innerHTML = `
         ${innerHTML}
       <div class="area_contactDelete" id= ${"contact_" + counter}>
+        <i class="fas fa-trash-alt"></i>
         <span id="id" style="display: none"><tr> ${contact.id}</tr></span>
         <span id="name"> ${contact.name}</span>
         <span id="surname"> ${contact.surname}</span>
-        <i class="fas fa-trash-alt"></i>
         <span id="phone_number"> ${contact.phoneNumber}</span>
       </div>
     `
@@ -42,7 +42,7 @@ const generateHTMLConfirmContactToDelete = (id) => {
   const divContactToConfirmDelete = document.querySelector('#display_contact_to_delete');
   let contact = getContactById(id);
 
-  divContactToConfirmDelete.innerHTML =  `
+  divContactToConfirmDelete.innerHTML = `
     <span id="deleted_Id" style="display: none"><tr> ${contact.id}</tr></span>
     <span>${contact.name}</span>
     <span>${contact.surname}</span>

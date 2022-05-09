@@ -6,6 +6,9 @@
   <title>Książka telefoniczna</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/addPopupStyle.css">
+  <link rel="stylesheet" href="css/deletePopupStyle.css">
+  <link rel="stylesheet" href="css/editPopupStyle.css">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/7d3919944a.js" crossorigin="anonymous"></script>
 </head>
@@ -25,8 +28,7 @@
 </div>
 
 <div class="popup_deleteContact">
-  <input class="search popup"
-         placeholder="Wyszukaj po nazwie użytkownika lub jego numerze telefonu kontakt do usunięcia"/>
+  <input class="search popup" placeholder="Wyszukaj po nazwie użytkownika lub jego numerze telefonu kontakt do usunięcia"/>
   <div class="area_contacts popupDelete"></div>
 </div>
 
@@ -90,7 +92,7 @@
       </div>
     </form>
     <div class="date">
-      <div> Data stworzenia kontaktu:
+      <div class="firstDate"> Data stworzenia kontaktu:
         <div id="current_date"></div>
       </div>
       <div id="modificationDate">Ostatnia data modyfikacji kontaktu:
@@ -110,7 +112,7 @@
 <script src="js/contact_Add/addContactBtn.js" async></script>
 <script src="js/clear.js" async></script>
 <script src="js/contact_Delete/deleteContactBtn.js" async></script>
-<script src="js/contact_Edit/editContactBtn.js" async></script>
+<script src="js/contact_Edit/showPopupEditForm.js" async></script>
 <script src="js/error.js" async></script>
 <script src="js/generateHTML.js" async></script>
 <script src="js/contact_Add/popupAddContact.js" async></script>

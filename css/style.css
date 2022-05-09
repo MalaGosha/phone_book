@@ -4,7 +4,6 @@
   padding: 0;
 }
 
-
 body {
   display: flex;
   justify-content: center;
@@ -42,11 +41,6 @@ body {
   background-color: rgba(215, 215, 215, 0.5);
 }
 
-.buttons {
-  display: flex;
-  margin-left: 50%;
-}
-
 button {
   padding: 5px;
   margin: 10px;
@@ -59,48 +53,9 @@ button:hover {
   opacity: 0.8;
 }
 
-.area_contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.area_contactDelete {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.area_contact:hover {
-  background-color: #bde5f6;
-  border-radius: 7px;
-}
-
-.area_contactDelete:hover {
-  background-color: #bde5f6;
-  border-radius: 7px;
-}
-
 span {
   padding: 5px;
   margin: 5px;
-}
-
-.date {
-  display: inline-block;
-  font-size: 17px;
-  color: #343333;
-}
-
-#modificationDate {
-  display: none;
-  margin-top: 10px;
-}
-
-.contact {
-  font-size: 26px;
 }
 
 .overlay {
@@ -127,132 +82,9 @@ span {
   z-index: 200;
 }
 
-.empty_phoneBook {
-  display: none;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  background: #fff;
-  padding: 30px;
-  margin-top: 10%;
-  z-index: 200;
-  border-radius: 7px;
-  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
-  color: #020242;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.popup_addContact {
-  display: none;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  background: #fff;
-  margin-top: 10%;
-  z-index: 200;
-  border-radius: 7px;
-  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
-}
-
-.addContact {
-  margin: 30px;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-}
-
-.form_box {
-  margin: 20px;
-}
-
-.form_box input {
-  width: auto;
-}
-
 i {
   margin-right: -5px;
   margin-left: 10px;
-}
-
-.addContact input{
-  display: flex;
-  border-radius: 7px;
-  padding: 10px;
-  width: auto;
-  background-color: rgba(215,215,216,0.89);
-}
-
-.error_add {
-  display: none;
-  font-style: italic;
-  font-size: 14px;
-  margin-top: 2px;
-  padding-top: 2px;
-  color: rgba(56,56,57,0.89);
-}
-
-.create_contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-}
-
-.popup_deleteContact {
-  display: none;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: 65%;
-  background: #fff;
-  margin-top: 10%;
-  z-index: 200;
-  border-radius: 7px;
-  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
-}
-
-.search popup{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.popup_confirmDelete {
-  display: none;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  background: rgb(182, 231, 248);
-  margin-top: 5%;
-  z-index: 200;
-  border-radius: 7px;
-  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
-}
-
-.popup_confirmDelete i {
-  padding: 5px
-}
-
-#display_contact_to_delete {
-  margin-top: 25px;
-  margin-left: 20px;
-  padding: 20px;
-  font-size: 25px;
-  font-weight: bold;
-
-}
-
-#write_contact_to_delete {
-  padding: 7px;
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: lighter;
-  color: rgba(23,100,120,0.89);
 }
 
 #text {
@@ -266,31 +98,6 @@ i {
   opacity: 0.95;
   border-radius: 5px;
   width: auto;
-}
-
-.error {
-  font-size: 16px;
-  color: rgb(108, 5, 15);
-  font-weight: lighter;
-  font-style: italic;
-  margin-left: 30px;
-}
-
-.popup_edit{
-  display: none;
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  width: 45%;
-  background: #fff;
-  margin-top: 10%;
-  z-index: 200;
-  border-radius: 7px;
-  box-shadow: 0px 3px 5px 0px rgba(96, 174, 196, 1), 0px 9px 10px rgba(0, 0, 0, 0.7);
-}
-
-.editContact {
-  padding: 20px;
 }
 
 .form_box {
@@ -313,9 +120,11 @@ i {
 .contact {
   margin: 20px;
   padding: 10px;
+  font-size: 26px;
 }
 
 .buttons {
+  display: flex;
   padding: 20px;
   margin-left: 10px;
 }

@@ -10,6 +10,8 @@ const changeDateInInput = () => {
     input.addEventListener('keyup', () => {
       if (input.value !== '') {
         showSaveBtnAndEditDate();
+      } else {
+        hideSaveBtn();
       }
     })
   })
