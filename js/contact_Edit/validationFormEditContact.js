@@ -3,7 +3,7 @@ const checkEditName = (implementedDateContactList) => {
   let elementName = implementedDateContactList[0];
   let result = regExpName.test(elementName.value);
 
-  if (result) {
+  if (result || elementName.value === '') {
     clearErrorEditForm(elementName);
   } else {
     showErrorCheckEditContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej liter')  ;
@@ -15,7 +15,7 @@ const checkEditSurname = (implementedDateContactList) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
   let elementSurname = implementedDateContactList[1];
   let result = regExpSurname.test(elementSurname.value);
-  if (result) {
+  if (result  || elementSurname.value === '') {
     clearErrorEditForm(elementSurname);
   } else {
     showErrorCheckEditContact(elementSurname, 'Nadaj nazwisko składające się od 3 do 20 liter');
@@ -27,7 +27,7 @@ const checkEditPhoneNumber = (implementedDateContactList) => {
   const regExpPhoneNumber = /^(.[0-9]{8}$)/;
   let elementPhone = implementedDateContactList[2];
   let result = regExpPhoneNumber.test(elementPhone.value);
-  if (result) {
+  if (result || elementPhone.value === '') {
     clearErrorEditForm(elementPhone);
   } else {
     showErrorCheckEditContact(elementPhone, 'Nadaj 9 cyfrowy numer telefonu')

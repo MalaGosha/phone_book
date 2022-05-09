@@ -16,6 +16,5 @@ const showErrorCheckEditContact = (inputEl, msg) => {
   const errorMsg = formBox.querySelector('.error');
   errorMsg.style.display = 'block';
   errorMsg.innerHTML = msg;
-  refreshFormEdit();
-
+  //refreshInputFormEdit(inputEl, msg);
 }

@@ -8,6 +8,15 @@ const refreshMainPage = () => {
   })
 }
 
+const refreshFormAdd = () => {
+  arrayDataAddContact.forEach(el => {
+    el.addEventListener('keyup', () => {
+      clearErrorAddForm(el);
+    })
+  })
+}
+
+/*
 const refreshFormEdit = () => {
   implementedDateContactList.forEach(el => {
     el.addEventListener('keyup', () => {
@@ -16,10 +25,7 @@ const refreshFormEdit = () => {
   })
 }
 
-const refreshFormAdd = () => {
-  arrayDataAddContact.forEach(el => {
-    el.addEventListener('keyup', () => {
-      clearErrorAddForm(el);
-    })
-  })
-}
+const refreshInputFormEdit = (inputEl) => {
+  inputEl.addEventListener('keyup', clearErrorEditForm);
+};
+*/
