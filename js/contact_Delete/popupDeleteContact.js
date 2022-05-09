@@ -20,7 +20,7 @@ const chooseContactToDelete = () => {
         overlay.style.display = 'block';
         overlay2.style.display = 'block';
         getIdContactToDelete(divContact);
-        clearError();
+        clearErrorDeleteForm();
         clearInputs();
       });
     })

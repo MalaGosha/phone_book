@@ -17,7 +17,7 @@ const checkConfirm = () => {
   } else {
     showErrorCheckConfirm();
   }
-  inputConfirm.addEventListener('click', clearError);
+  inputConfirm.addEventListener('click', clearErrorDeleteForm);
 }
 
 const closePopupConfirm = () => {

@@ -1,6 +1,12 @@
-const clearError = () => {
+const clearErrorDeleteForm = () => {
   const error = document.querySelector('.error');
   error.innerHTML = "";
+}
+
+const clearErrorAddForm = (inputEl) => {
+  const formBox = inputEl.parentElement;
+  const errorMsg = formBox.querySelector('.error_add');
+  errorMsg.innerHTML = '';
 }
 
 const clearAllErrorsAddForm = () => {
@@ -11,20 +17,12 @@ const clearAllErrorsAddForm = () => {
   })
 }
 
-const clearErrorAddForm = (inputEl) => {
-  const formBox = inputEl.parentElement;
-  const errorMsg = formBox.querySelector('.error_add');
-  errorMsg.innerHTML = '';
-}
-
-/*
 const clearErrorEditForm = (inputEl) => {
   const formBox = inputEl.parentElement;
   const errorMsg = formBox.querySelector('.error');
   errorMsg.style.display = 'none';
   errorMsg.innerHTML = '';
 }
-*/
 
 const clearInputs = () => {
   searchPopup.innerHTML = '';

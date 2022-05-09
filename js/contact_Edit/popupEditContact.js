@@ -1,7 +1,7 @@
 let editList = [];
 let contact;
 let idToEdit;
-let newDateContactList = [];
+let implementedDateContactList = [];
 
 const changeDateInInput = () => {
   const inputs = document.querySelectorAll('input');
@@ -56,7 +56,7 @@ const backToMockup = () => {
   const popupEdit = document.querySelector('.popup_edit');
   popupEdit.style.display = 'none';
   overlay.style.display = 'none';
-  newDateContactList.forEach(elList => {
+  implementedDateContactList.forEach(elList => {
     elList.value = '';
   })
   refreshMainPage();

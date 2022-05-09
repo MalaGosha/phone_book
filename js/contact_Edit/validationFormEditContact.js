@@ -1,71 +1,76 @@
-/*
-const checkEditName = (newDateContactList) => {
+const checkEditName = (implementedDateContactList) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
-  let elementName = newDateContactList[0];
+  let elementName = implementedDateContactList[0];
   let result = regExpName.test(elementName.value);
-  console.log('AAAAAAAAaa');
-  console.log('newDatecontactList ' + newDateContactList);
-  console.log('elementNme ' + elementName);
-  console.log('el value' + elementName.value);
+
+  if (result) {
+    clearErrorEditForm(elementName);
+  } else {
+    showErrorCheckEditContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej liter')  ;
+  }
   return result;
 }
 
+const checkEditSurname = (implementedDateContactList) => {
+  const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
+  let elementSurname = implementedDateContactList[1];
+  let result = regExpSurname.test(elementSurname.value);
+  if (result) {
+    clearErrorEditForm(elementSurname);
+  } else {
+    showErrorCheckEditContact(elementSurname, 'Nadaj nazwisko składające się od 3 do 20 liter');
+  }
+  return result;
+}
 
-
+const checkEditPhoneNumber = (implementedDateContactList) => {
+  const regExpPhoneNumber = /^(.[0-9]{8}$)/;
+  let elementPhone = implementedDateContactList[2];
+  let result = regExpPhoneNumber.test(elementPhone.value);
+  if (result) {
+    clearErrorEditForm(elementPhone);
+  } else {
+    showErrorCheckEditContact(elementPhone, 'Nadaj 9 cyfrowy numer telefonu')
+  }
+  return result;
+}
 
 const checkInputFormEditContact = () => {
   const newName = document.querySelector('#edit_name');
   const newSurname = document.querySelector('#edit_surname');
   const newPhoneNumber = document.querySelector('#edit_number');
-  newDateContactList = [newName, newSurname, newPhoneNumber];
+  implementedDateContactList = [newName, newSurname, newPhoneNumber];
+
   contact = getContactById(idToEdit);
 
-  console.log('contact ' + contact);
-  console.log('contact.name ' + contact.name);
-  console.log('id to edit ' + idToEdit);
-  console.log('new name value' + newName.value);
+  let resultName = checkEditName(implementedDateContactList);
+  if(resultName){
+    contact.name = newName.value;
+  };
 
-
-  if (newName.value !== '') {
-    checkEditName(newDateContactList);
-    console.log('QQQQq');
-    console.log('contact.name ' + contact.name);
-    console.log('id to edit ' + idToEdit);
-    console.log('new name value' + newName.value);
-  }*/
-  /*if (newSurname.value !== '') {
-    checkSurname(newDateContactList);
-  }
-  if (newPhoneNumber.value !== '') {
-    checkPhoneNumber(newDateContactList);
-  }
-
-  let resultName = checkName(newDateContactList);
-  let resultSurname = checkSurname(newDateContactList);
-  let resultPhoneNumber = checkPhoneNumber(newDateContactList);
-
-
-  if (resultName === true) {
-
-  }
-  if (resultSurname === true) {
+  let resultSurname = checkEditSurname(implementedDateContactList);
+  if(resultSurname) {
     contact.surname = newSurname.value;
-  }
-  if (resultPhoneNumber === true) {
+  };
+
+  let resultPhoneNumber = checkEditPhoneNumber(implementedDateContactList);
+  if(resultPhoneNumber){
     contact.phoneNumber = newPhoneNumber.value;
+  };
+
+  if(resultName || newName.value === ''){
+    if(resultSurname || newSurname.value === ''){
+      if(resultPhoneNumber || newPhoneNumber.value === ''){
+        saveChangeInEditContact();
+      }
+    }
   }
-  if (resultName && resultSurname && resultPhoneNumber === true) {
-
-    saveChangeInEditContact();
-  }*/
-
-/*
+}
 
 const refreshFormEdit = () => {
-  const inputsDataAddContact = document.querySelectorAll('input');
-  inputsDataAddContact.forEach(el => {
+  implementedDateContactList.forEach(el => {
     el.addEventListener('keyup', () => {
       clearErrorEditForm(el);
     })
+  })
 }
-*/
