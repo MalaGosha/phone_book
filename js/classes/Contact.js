@@ -1,5 +1,4 @@
 let contactsList = [];
-
 let counter = 0;
 
 class Contact {
@@ -15,7 +14,7 @@ class Contact {
     this.name = name;
     this.surname = surname;
     this.phoneNumber = phoneNumber;
-    this.createDate = Date();
+    this.createDate = formatDate(Date.now());
     this.modificationDate = null;
     counter++;
   }
@@ -39,5 +38,4 @@ function deleteContactById(id){
 function getContactList(){
   return contactsList;
 }
-
 

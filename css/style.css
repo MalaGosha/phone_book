@@ -88,6 +88,10 @@ span {
   margin: 5px;
 }
 
+#modificationDate {
+  display: none;
+}
+
 .contact {
   font-size: 26px;
 }

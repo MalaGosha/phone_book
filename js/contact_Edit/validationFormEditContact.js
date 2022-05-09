@@ -41,22 +41,25 @@ const checkInputFormEditContact = () => {
   const newPhoneNumber = document.querySelector('#edit_number');
   implementedDateContactList = [newName, newSurname, newPhoneNumber];
 
-  contact = getContactById(idToEdit);
+  let contact = getContactById(idToEdit);
 
   let resultName = checkEditName(implementedDateContactList);
   if(resultName){
+    console.log(contact)
+    console.log(contact.name)
+    console.log(newName.value)
     contact.name = newName.value;
-  };
+  }
 
   let resultSurname = checkEditSurname(implementedDateContactList);
   if(resultSurname) {
     contact.surname = newSurname.value;
-  };
+  }
 
   let resultPhoneNumber = checkEditPhoneNumber(implementedDateContactList);
   if(resultPhoneNumber){
     contact.phoneNumber = newPhoneNumber.value;
-  };
+  }
 
   if(resultName || newName.value === ''){
     if(resultSurname || newSurname.value === ''){

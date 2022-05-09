@@ -8,7 +8,7 @@ const changeDateInInput = () => {
   inputs.forEach(input => {
     input.addEventListener('keyup', () => {
       if (input.value !== '') {
-        showSaveBtn();
+        showSaveBtnAndEditDate();
       }
     })
   })
@@ -32,16 +32,19 @@ const noEditForm = (editList) => {
   });
 }
 
-const writeDateContactToPlaceholder = (id) => {
+const writeDataToPopup = (areaContact) => {
+  let id = getIdContactToEdit(areaContact);
   const editName = document.querySelector('#edit_name');
   const editSurname = document.querySelector('#edit_surname');
   const editPhoneNumber = document.querySelector('#edit_number');
+  const currentDate = document.getElementById('current_date');
   editList = [editName, editSurname, editPhoneNumber];
 
   contact = getContactById(id);
   editName.placeholder = contact.name;
   editSurname.placeholder = contact.surname;
   editPhoneNumber.placeholder = contact.phoneNumber;
+  currentDate.innerHTML = contact.createDate;
 
   noEditForm(editList);
 }
@@ -49,7 +52,7 @@ const writeDateContactToPlaceholder = (id) => {
 const getIdContactToEdit = (areaContact) => {
   const idContactToEdit = areaContact.querySelector('#id');
   idToEdit = idContactToEdit.innerHTML;
-  writeDateContactToPlaceholder(idToEdit);
+  return idToEdit;
 }
 
 const backToMainPage = () => {
