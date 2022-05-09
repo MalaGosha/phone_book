@@ -1,10 +1,13 @@
+const saveBtn = document.querySelector('.save');
+
 const saveChangeInEditContact = () => {
   updateHtml();
-  backToMockup();
+  backToMainPage();
+  clearAllErrorsEditForm();
+  refreshMainPage();
 }
 
 const showSaveBtn = () => {
-  const saveBtn = document.querySelector('.save');
   saveBtn.style.display = 'block';
   saveBtn.addEventListener('click', checkInputFormEditContact);
 }

@@ -24,6 +24,14 @@ const clearErrorEditForm = (inputEl) => {
   errorMsg.innerHTML = '';
 }
 
+const clearAllErrorsEditForm = () => {
+  const errors = document.querySelectorAll('.error');
+  errors.forEach(el => {
+    el.style.display = 'none';
+    el.innerHTML = '';
+  })
+}
+
 const clearInputs = () => {
   searchPopup.innerHTML = '';
   search.innerHTML = '';

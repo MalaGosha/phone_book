@@ -52,7 +52,7 @@ const getIdContactToEdit = (areaContact) => {
   writeDateContactToPlaceholder(idToEdit);
 }
 
-const backToMockup = () => {
+const backToMainPage = () => {
   const popupEdit = document.querySelector('.popup_edit');
   popupEdit.style.display = 'none';
   overlay.style.display = 'none';

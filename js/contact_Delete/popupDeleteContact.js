@@ -25,29 +25,14 @@ const chooseContactToDelete = () => {
       });
     })
   }
-  ``
 }
 
 const searchContactToDelete = contact => {
   searchContactDelete(contact);
   chooseContactToDelete();
-  getIdContactToDelete();
 }
 
-
 searchPopup.addEventListener('keyup', searchContactToDelete);
-
-window.addEventListener('keydown', event => {
-  if (event.key === 'Escape') {
-    popupDeleteContact.style.display = 'none';
-    popupAddContact.style.display = 'none';
-    popupConfirmDelete.style.display = 'none';
-    popupEmptyBook.style.display = 'none';
-    overlay.style.display = 'none';
-    overlay2.style.display = 'none';
-    clearInputs();
-  }
-})
 
 overlay2.addEventListener('click', event => {
   popupConfirmDelete.style.display = 'none';

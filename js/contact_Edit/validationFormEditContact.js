@@ -67,10 +67,4 @@ const checkInputFormEditContact = () => {
   }
 }
 
-const refreshFormEdit = () => {
-  implementedDateContactList.forEach(el => {
-    el.addEventListener('keyup', () => {
-      clearErrorEditForm(el);
-    })
-  })
-}
+
