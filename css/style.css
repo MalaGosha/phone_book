@@ -88,8 +88,15 @@ span {
   margin: 5px;
 }
 
+.date {
+  display: inline-block;
+  font-size: 17px;
+  color: #343333;
+}
+
 #modificationDate {
   display: none;
+  margin-top: 10px;
 }
 
 .contact {

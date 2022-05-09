@@ -2,6 +2,7 @@ let editList = [];
 let contact;
 let idToEdit;
 let implementedDateContactList = [];
+let id;
 
 const changeDateInInput = () => {
   const inputs = document.querySelectorAll('input');
@@ -33,7 +34,7 @@ const noEditForm = (editList) => {
 }
 
 const writeDataToPopup = (areaContact) => {
-  let id = getIdContactToEdit(areaContact);
+  id = getIdContactToEdit(areaContact);
   const editName = document.querySelector('#edit_name');
   const editSurname = document.querySelector('#edit_surname');
   const editPhoneNumber = document.querySelector('#edit_number');
@@ -45,7 +46,7 @@ const writeDataToPopup = (areaContact) => {
   editSurname.placeholder = contact.surname;
   editPhoneNumber.placeholder = contact.phoneNumber;
   currentDate.innerHTML = contact.createDate;
-
+  console.log("contact.createDate " + contact.createDate);
   noEditForm(editList);
 }
 
