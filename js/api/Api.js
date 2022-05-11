@@ -1,10 +1,11 @@
-let GET = "GET";
-let POST = "POST";
+const GET = "GET";
+const POST = "POST";
 
 function sendNewContact(handleContact) {
   return fetch('http://localhost:8080/contact/', {
     method: POST,
     headers: {
+      'Accept': 'application/json',
       "Content-Type": "application/json"
     },
     body: JSON.stringify(handleContact)
@@ -19,3 +20,14 @@ function sendNewContact(handleContact) {
     });
 }
 
+function getAllContacts() {
+  return fetch('http://localhost:8080/contact/all', {
+    headers: {
+      'Accept': 'application/json',
+      "Content-Type": "application/json"
+    }
+  })
+    .then((response) => {
+      return response.json()
+    });
+}

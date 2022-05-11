@@ -16,9 +16,7 @@ const closePopup = () => {
 
 async function createNewContact(){
   handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
-  console.log('A ' + handleContact);
-  let sendNewContactToDB1 = await sendNewContact(handleContact);
-  console.log('B ' + sendNewContactToDB1);
+  await sendNewContact(handleContact);
   addContact(handleContact);
   closePopup();
   refreshMainPage();

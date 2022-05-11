@@ -16,16 +16,4 @@ const refreshFormAdd = () => {
   })
 }
 
-/*
-const refreshFormEdit = () => {
-  implementedDateContactList.forEach(el => {
-    el.addEventListener('keyup', () => {
-      clearErrorEditForm(el);
-    })
-  })
-}
 
-const refreshInputFormEdit = (inputEl) => {
-  inputEl.addEventListener('keyup', clearErrorEditForm);
-};
-*/

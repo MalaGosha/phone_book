@@ -54,12 +54,16 @@ const clearHTMLAreaContacts = () => {
   areaContactsPopupDelete.innerHTML = '';
 }
 
-function updateHtml() {
+async function updateHtml() {
   let contactList = getContactList();
   clearHTMLAreaContacts();
   contactList.sort((a, b) => a.name.localeCompare(b.name))
   generateHTMLContact(contactList);
   generateHTMLContactToDelete(contactList);
+  let getAllContacts1 = await getAllContacts();
+
+  console.log("list contacts " + getAllContacts1)
+  console.log("list contacts " + getAllContacts1[0].name)
 }
 
 
