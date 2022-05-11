@@ -1,4 +1,3 @@
-const GET = "GET";
 const POST = "POST";
 const DELETE = "DELETE";
 
@@ -22,15 +21,15 @@ function getAllContacts() {
       'Accept': 'application/json',
       "Content-Type": "application/json"
     }
-  })
-    .then((response) => {
-      return response.json()
-    });
+  }).then((response) => {
+    console.log("Status code" + response.status)
+    return response.json()
+  });
 }
 
 
-function deleteContactFromArray(contactToDelete) {
-  return fetch('http://localhost:8080/contact/' + contactToDelete, {
+function deleteContactFromArray(id) {
+  return fetch('http://localhost:8080/contact/' + id, {
     method: DELETE,
     headers: {
       'Accept': 'application/json',

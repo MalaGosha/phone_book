@@ -54,38 +54,15 @@ const clearHTMLAreaContacts = () => {
   areaContactsPopupDelete.innerHTML = '';
 }
 
-function updateHtml() {
-  let contactList = getContactList();
+async function updateHtml() {
+  let contactList = await getAllContacts();
+  console.log("arrayContacts: " + contactList)
+  console.log("arrayContacts[0]: " + contactList[0])
+  console.log("arrayContacts.id: " + contactList[0].id)
+
   clearHTMLAreaContacts();
   contactList.sort((a, b) => a.name.localeCompare(b.name))
   generateHTMLContact(contactList);
   generateHTMLContactToDelete(contactList);
 }
-
-/*
-
-
-const generateHTMLContact1 = (arrayAllContacts) => {
-  arrayAllContacts.forEach(oneContact => {
-    let innerHTML = areaContacts.innerHTML;
-    areaContacts.innerHTML = `
-        ${innerHTML}
-      <div class="area_contact" id= ${"contact_" + counter}>
-        <span id="id" style="display: none"> ${oneContact.id}</span>
-        <span id="name"> ${oneContact.name}</span>
-        <span id="surname"> ${oneContact.surname}</span>
-        <i class="fa-solid fa-phone"></i>
-        <span id="phone_number"> ${oneContact.phoneNumber}</span>
-      </div>
-    `
-  })
-}
-
-
-async function upHTML() {
-  let arrayAllContacts = await getAllContacts();
-  generateHTMLContact1(arrayAllContacts);
-  generateHTMLContactToDelete(arrayAllContacts);
-}
-*/
 

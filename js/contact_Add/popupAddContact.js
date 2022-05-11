@@ -14,17 +14,23 @@ const closePopup = () => {
   })
 }
 
+/*
+async function getArrayContacts() {
+  let arrayContacts = await getAllContacts();
+
+
+}*/
+
 async function createNewContact() {
   handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
+
   let newContact = await sendNewContact(handleContact);
   console.log("new Contact: " + newContact)
   console.log("new Contact id:" + newContact.id)
-    /*await deleteContactFromArray(1);
-    await getAllContacts();
-    // upHTML();*/
-    addContact(handleContact);
-    closePopup();
-    refreshMainPage();
+
+  addContact(handleContact);
+  closePopup();
+  refreshMainPage();
 }
 
 createContactBtn.addEventListener('click', e => {
