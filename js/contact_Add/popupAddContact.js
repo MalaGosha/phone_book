@@ -17,6 +17,9 @@ const closePopup = () => {
 async function createNewContact(){
   handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
   await sendNewContact(handleContact);
+  await deleteContactFromArray(1);
+  await getAllContacts();
+  // upHTML();
   addContact(handleContact);
   closePopup();
   refreshMainPage();

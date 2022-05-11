@@ -1,5 +1,6 @@
 const GET = "GET";
 const POST = "POST";
+const DELETE = "DELETE";
 
 function sendNewContact(handleContact) {
   return fetch('http://localhost:8080/contact/', {
@@ -29,5 +30,23 @@ function getAllContacts() {
   })
     .then((response) => {
       return response.json()
+    });
+}
+
+function deleteContactFromArray(contactToDelete) {
+  return fetch('http://localhost:8080/contact/'+ contactToDelete, {
+    method: DELETE,
+    headers: {
+      'Accept': 'application/json',
+      "Content-Type": "application/json"
+    }
+  })
+    .then((response) => {
+      console.log(response.status)
+      return response.text()
+    })
+    .then((text) => {
+      console.log('deleted ' + text)
+      return text
     });
 }
