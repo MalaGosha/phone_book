@@ -33,6 +33,7 @@ function getAllContacts() {
     });
 }
 
+
 function deleteContactFromArray(contactToDelete) {
   return fetch('http://localhost:8080/contact/'+ contactToDelete, {
     method: DELETE,
