@@ -26,9 +26,6 @@ function getContactById(id){
 }
 
 function addContact(contact) {
- // console.log(getContactString());
-  //abc()
-  getContactString()
   contactsList.push(contact);
   updateHtml();
 }

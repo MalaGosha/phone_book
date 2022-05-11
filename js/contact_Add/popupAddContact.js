@@ -3,6 +3,7 @@ const contactSurname = document.querySelector("#add_surname");
 const contactPhoneNumber = document.querySelector("#add_number");
 const createContactBtn = document.querySelector('.create');
 
+let handleContact;
 let arrayDataAddContact = [contactName, contactSurname, contactPhoneNumber];
 
 const closePopup = () => {
@@ -13,8 +14,11 @@ const closePopup = () => {
   })
 }
 
-const createNewContact = () => {
-  let handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
+async function createNewContact(){
+  handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
+  console.log('A ' + handleContact);
+  let sendNewContactToDB1 = await sendNewContact(handleContact);
+  console.log('B ' + sendNewContactToDB1);
   addContact(handleContact);
   closePopup();
   refreshMainPage();
