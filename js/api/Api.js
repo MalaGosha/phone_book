@@ -2,7 +2,7 @@ const GET = "GET";
 const POST = "POST";
 const DELETE = "DELETE";
 
-function sendNewContact(handleContact) {
+async function sendNewContact(handleContact) {
   return fetch('http://localhost:8080/contact/', {
     method: POST,
     headers: {
@@ -10,15 +10,10 @@ function sendNewContact(handleContact) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(handleContact)
-  })
-    .then((response) => {
-      console.log(response.status)
-      return response.text()
-    })
-    .then((text) => {
-      console.log('creted ' + text)
-      return text
-    });
+  }).then((response) => {
+    console.log("Status code" + response.status)
+    return response.json()
+  });
 }
 
 function getAllContacts() {
@@ -35,7 +30,7 @@ function getAllContacts() {
 
 
 function deleteContactFromArray(contactToDelete) {
-  return fetch('http://localhost:8080/contact/'+ contactToDelete, {
+  return fetch('http://localhost:8080/contact/' + contactToDelete, {
     method: DELETE,
     headers: {
       'Accept': 'application/json',

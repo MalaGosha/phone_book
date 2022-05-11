@@ -38,21 +38,24 @@ const checkInputFormAddContact = (arrayDataAddContact) => {
   let resultSurname = checkSurname(arrayDataAddContact);
   let resultPhoneNumber = checkPhoneNumber(arrayDataAddContact);
 
-  if (resultName && resultSurname && resultPhoneNumber === true){
-    createNewContact();
-    clearAllErrorsAddForm();
-  }
+  return resultName && resultSurname && resultPhoneNumber === true;
 }
 
 const checkFormAddContact = (arrayDataAddContact) => {
+  let result = false;
   arrayDataAddContact.forEach(el => {
     if (el.value == '') {
       showErrorCheckAddContact(el, 'Uzupełnij pole');
     } else {
-      checkInputFormAddContact(arrayDataAddContact);
+      result = checkInputFormAddContact(arrayDataAddContact);
     }
   })
+  return result;
 };
 
-
-
+const addOneContact = (arrayDataAddContact) => {
+  if(checkFormAddContact(arrayDataAddContact)){
+    createNewContact();
+    clearAllErrorsAddForm();
+  }
+}
