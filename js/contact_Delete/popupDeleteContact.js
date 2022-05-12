@@ -19,7 +19,7 @@ async function chooseContactToDelete(){
         overlay.style.display = 'block';
         overlay2.style.display = 'block';
         let id = getIdContactToDelete(divContact);
-        let contact = await getContact(id);
+        let contact = await getContactById(id);
         generateHTMLConfirmContactToDelete(contact);
         clearErrorDeleteForm();
         clearInputs();

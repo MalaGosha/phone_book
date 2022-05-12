@@ -54,6 +54,7 @@ const clearHTMLAreaContacts = () => {
 
 async function updateHtml() {
   clearHTMLAreaContacts();
+  clearInputs();
   let contactList = await getAllContacts();
   contactList.sort((a, b) => a.name.localeCompare(b.name))
   generateHTMLContacts(contactList);

@@ -25,7 +25,7 @@ const clearErrorEditForm = (inputEl) => {
 }
 
 const clearAllErrorsEditForm = () => {
-  const errors = document.querySelectorAll('.error');
+  const errors = document.querySelectorAll('.editForm');
   errors.forEach(el => {
     el.style.display = 'none';
     el.innerHTML = '';

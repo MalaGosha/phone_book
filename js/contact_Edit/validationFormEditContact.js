@@ -41,7 +41,7 @@ const checkInputFormEditContact = async () => {
   const newPhoneNumber = document.querySelector('#edit_number');
   implementedDateContactList = [newName, newSurname, newPhoneNumber];
 
-  let contact = await getContact(idToEdit);
+  let contact = await getContactById(id);
 
   let resultName = checkEditName(implementedDateContactList);
   if(resultName){

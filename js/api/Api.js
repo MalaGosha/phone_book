@@ -28,7 +28,7 @@ async function getAllContacts() {
   });
 }
 
-async function getContact(id) {
+async function getContactById(id) {
   return fetch('http://localhost:8080/contact/' + id,{
     headers: {
       'Accept': 'application/json',

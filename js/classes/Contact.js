@@ -1,4 +1,3 @@
-
 class Contact {
   id;
   name;

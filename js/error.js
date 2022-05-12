@@ -1,5 +1,5 @@
 const showErrorCheckConfirm = () => {
-  const error = document.querySelector('.error');
+  const error = document.querySelector('.confirmDelete');
   error.innerHTML = "Wpisz poprawnie jeszcze raz!"
 }
 
@@ -16,5 +16,4 @@ const showErrorCheckEditContact = (inputEl, msg) => {
   const errorMsg = formBox.querySelector('.error');
   errorMsg.style.display = 'block';
   errorMsg.innerHTML = msg;
-  //refreshInputFormEdit(inputEl, msg);
 }

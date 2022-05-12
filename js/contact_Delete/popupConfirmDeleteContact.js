@@ -7,21 +7,20 @@ async function checkIdentityOfSurnames() {
   const deletedId = document.querySelector('#deleted_Id');
   let inputSurname = inputConfirm.value;
   let id = deletedId.innerHTML;
-  let contactById = await getContact(id);
+  let contactById = await getContactById(id);
 
   if (inputSurname !== contactById.surname) {
     showErrorCheckConfirm();
   } else {
-    popupConfirmDelete.style.display = 'none';
     await deleteContactFromDB(id);
     await updateHtml();
-    closePopupConfirm();
+    closePopupConfirmSurname();
     await chooseContactToDelete();
   }
   inputConfirm.addEventListener('click', clearErrorDeleteForm);
 }
 
-const closePopupConfirm = () => {
+const closePopupConfirmSurname = () => {
   popupConfirmDelete.style.display = 'none';
   overlay2.style.display = 'none';
   overlay.style.display = 'play';
@@ -30,7 +29,7 @@ const closePopupConfirm = () => {
 }
 
 deleteBtnConfirm.addEventListener('click', checkIdentityOfSurnames);
-escapeBtn.addEventListener('click', closePopupConfirm);
+escapeBtn.addEventListener('click', closePopupConfirmSurname);
 
 
 

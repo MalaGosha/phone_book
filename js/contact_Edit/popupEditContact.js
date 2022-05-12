@@ -1,6 +1,5 @@
 let editList = [];
 let contact;
-let idToEdit;
 let implementedDateContactList = [];
 let id;
 
@@ -17,25 +16,28 @@ const changeDateInInput = () => {
   })
 }
 
-const noEditForm = (editList) => {
+const activeFormEdit = (editList) => {
+  editList.forEach(el => {
+    if (el.value == '') {
+      el.disabled = false;
+    }
+  })
+  changeDateInInput();
+}
+
+const disabledFormEdit = (editList) => {
   editList.forEach(el => {
     if (el.value == '') {
       el.disabled = true;
     }
   })
-
   const editBtn = document.querySelector('.edit');
   editBtn.addEventListener('click', () => {
-    editList.forEach(el => {
-      if (el.value == '') {
-        el.disabled = false;
-      }
-    })
-    changeDateInInput();
+    activeFormEdit(editList);
   });
 }
 
-const writeDataToPopup = async (areaContact) => {
+const writeDataToPopupEditForm = async (areaContact) => {
   id = getIdContactToEdit(areaContact);
 
   const editName = document.querySelector('#edit_name');
@@ -44,13 +46,13 @@ const writeDataToPopup = async (areaContact) => {
   const currentDate = document.getElementById('current_date');
   editList = [editName, editSurname, editPhoneNumber];
 
-  contact = await getContact(id);
+  contact = await getContactById(id);
   editName.placeholder = contact.name;
   editSurname.placeholder = contact.surname;
   editPhoneNumber.placeholder = contact.phoneNumber;
   currentDate.innerHTML = contact.createDate;
   console.log("contact.createDate " + contact.createDate);
-  noEditForm(editList);
+  disabledFormEdit(editList);
 }
 
 const getIdContactToEdit = (areaContact) => {
