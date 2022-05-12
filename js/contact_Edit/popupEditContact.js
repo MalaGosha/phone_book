@@ -37,6 +37,7 @@ const noEditForm = (editList) => {
 
 const writeDataToPopup = (areaContact) => {
   id = getIdContactToEdit(areaContact);
+
   const editName = document.querySelector('#edit_name');
   const editSurname = document.querySelector('#edit_surname');
   const editPhoneNumber = document.querySelector('#edit_number');
@@ -54,8 +55,7 @@ const writeDataToPopup = (areaContact) => {
 
 const getIdContactToEdit = (areaContact) => {
   const idContactToEdit = areaContact.querySelector('#id');
-  idToEdit = idContactToEdit.innerHTML;
-  return idToEdit;
+  return idContactToEdit.innerHTML;
 }
 
 const backToMainPage = () => {
@@ -65,7 +65,7 @@ const backToMainPage = () => {
   implementedDateContactList.forEach(elList => {
     elList.value = '';
   })
-  refreshMainPage();
+  prepareContactToEdit();
 }
 
 

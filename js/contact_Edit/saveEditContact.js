@@ -4,7 +4,7 @@ const saveChangeInEditContact = () => {
   clearAllErrorsEditForm();
   updateHtml();
   backToMainPage();
-  refreshMainPage();
+  prepareContactToEdit();
 }
 
 const showSaveBtnAndEditDate = () => {

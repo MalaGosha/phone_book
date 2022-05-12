@@ -1,5 +1,6 @@
 const POST = "POST";
 const DELETE = "DELETE";
+const PUT = "PUT";
 
 async function sendNewContact(handleContact) {
   return fetch('http://localhost:8080/contact/', {
@@ -10,25 +11,37 @@ async function sendNewContact(handleContact) {
     },
     body: JSON.stringify(handleContact)
   }).then((response) => {
-    console.log("Status code" + response.status)
+    console.log("Status code create " + response.status)
     return response.json()
   });
 }
 
-function getAllContacts() {
+async function getAllContacts() {
   return fetch('http://localhost:8080/contact/all', {
     headers: {
       'Accept': 'application/json',
       "Content-Type": "application/json"
     }
   }).then((response) => {
-    console.log("Status code" + response.status)
+    console.log("Status code get array " + response.status)
+    return response.json()
+  });
+}
+
+async function getContact(id) {
+  return fetch('http://localhost:8080/contact/' + id,{
+    headers: {
+      'Accept': 'application/json',
+      "Content-Type": "application/json"
+    }
+  }).then((response) => {
+    console.log("Status code get one contact " + response.status)
     return response.json()
   });
 }
 
 
-function deleteContactFromArray(id) {
+async function deleteContactFromDB(id) {
   return fetch('http://localhost:8080/contact/' + id, {
     method: DELETE,
     headers: {
@@ -37,11 +50,30 @@ function deleteContactFromArray(id) {
     }
   })
     .then((response) => {
+      console.log("Status deleted contact " + response.status);
+    })
+   /* .then((response) => {
       console.log(response.status)
       return response.text()
     })
     .then((text) => {
       console.log('deleted ' + text)
       return text
-    });
+    });*/
 }
+/*
+
+async function editContact(id, contactWithNewData){
+  return fetch('http://localhost:8080/contact/' + id, {
+    method: PUT,
+    headers: {
+      'Accept': 'application/json',
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(contactWithNewData)
+  })
+    .then((response) => {
+
+    })
+}
+*/

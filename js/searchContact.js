@@ -15,7 +15,7 @@ const searchContact = e => {
 
 }
 
-const searchContactDelete = e => {
+const showFilteredContactsToGrid = e => {
   const areaContactDelete = document.querySelectorAll('.area_contactDelete');
   const searchValue = e.target.value.toLowerCase();
 

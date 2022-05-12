@@ -2,20 +2,24 @@ const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
 const deleteBtnConfirm = document.querySelector('.confirm');
 const escapeBtn = document.querySelector('.escape');
 
-const checkConfirm = () => {
+async function checkIdentityOfSurnames() {
   const inputConfirm = document.querySelector('#confirm');
   const deletedId = document.querySelector('#deleted_Id');
   let inputSurname = inputConfirm.value;
   let id = deletedId.innerHTML;
-  let contactById = getContactById(id);
+  let contactById = await getContact(id);
 
-  if (inputSurname === contactById.surname) {
-    popupConfirmDelete.style.display = 'none';
-    deleteContactById(id);
-    chooseContactToDelete();
-    closePopupConfirm();
-  } else {
+  if (inputSurname !== contactById.surname) {
     showErrorCheckConfirm();
+  } else {
+    popupConfirmDelete.style.display = 'none';
+    await chooseContactToDelete();
+
+    // w tym miejscu funkcja API usuwająca kontakt
+    await deleteContactFromDB(id);
+
+    updateHtml();
+    closePopupConfirm();
   }
   inputConfirm.addEventListener('click', clearErrorDeleteForm);
 }
@@ -28,7 +32,7 @@ const closePopupConfirm = () => {
   inputConfirm.innerHTML = '';
 }
 
-deleteBtnConfirm.addEventListener('click', checkConfirm);
+deleteBtnConfirm.addEventListener('click', checkIdentityOfSurnames);
 escapeBtn.addEventListener('click', closePopupConfirm);
 
 

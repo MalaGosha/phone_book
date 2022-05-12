@@ -3,23 +3,24 @@ const overlay2 = document.querySelector('.overlay2');
 
 const getIdContactToDelete = (divContact) => {
   const idContactToDelete = divContact.querySelector('#id');
-  let id = idContactToDelete.innerHTML;
-  generateHTMLConfirmContactToDelete(id);
-}
+  return idContactToDelete.innerHTML;
+  }
 
-const chooseContactToDelete = () => {
-  const areaContactDelete = document.querySelectorAll('.area_contactDelete');
+async function chooseContactToDelete(){
+ const areaContactDelete = document.querySelectorAll('.area_contactDelete');
 
   if(areaContactDelete.length === 0) {
-    noShowPopupDeleteContact();
+    hidePopupDeleteContact();
   } else {
     areaContactDelete.forEach(divContact => {
-      divContact.addEventListener("click", e => {
+      divContact.addEventListener("click", async e => {
         const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
         popupConfirmDelete.style.display = 'block';
         overlay.style.display = 'block';
         overlay2.style.display = 'block';
-        getIdContactToDelete(divContact);
+        let id = getIdContactToDelete(divContact);
+        let contact = await getContact(id);
+        generateHTMLConfirmContactToDelete(contact);
         clearErrorDeleteForm();
         clearInputs();
       });
@@ -28,9 +29,11 @@ const chooseContactToDelete = () => {
 }
 
 const searchContactToDelete = contact => {
-  searchContactDelete(contact);
+  showFilteredContactsToGrid(contact);
   chooseContactToDelete();
 }
+
+
 
 searchPopup.addEventListener('keyup', searchContactToDelete);
 

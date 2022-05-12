@@ -17,7 +17,7 @@ const showPopupDeleteContact = () => {
   chooseContactToDelete();
 }
 
-const noShowPopupDeleteContact = () => {
+const hidePopupDeleteContact = () => {
   overlay.style.display = 'none';
   popupDeleteContact.style.display = 'none';
   showPopupAboutEmptyPhoneBook();
@@ -26,7 +26,7 @@ const noShowPopupDeleteContact = () => {
 const checkEmptyAreaContacts = () => {
   const areaContacts = document.querySelector('.area_contacts');
   if (areaContacts.innerHTML === '') {
-    noShowPopupDeleteContact();
+    hidePopupDeleteContact();
   } else {
     showPopupDeleteContact();
   }

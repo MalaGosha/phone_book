@@ -12,6 +12,6 @@ window.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
     hidePopup();
     clearInputs();
-    refreshMainPage();
+    prepareContactToEdit();
   }
 })

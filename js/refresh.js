@@ -1,8 +1,8 @@
-const refreshMainPage = () => {
+const prepareContactToEdit = () => {
   const listAreaContacts = document.querySelectorAll('.area_contact');
   listAreaContacts.forEach(areaContact => {
     areaContact.addEventListener('click', () => {
-      writeDataToPopup(areaContact);
+      //writeDataToPopup(areaContact);
       showPopupFormEdit();
     });
   })

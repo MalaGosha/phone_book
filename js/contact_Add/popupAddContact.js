@@ -21,16 +21,15 @@ async function getArrayContacts() {
 
 }*/
 
+
+
 async function createNewContact() {
   handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
-
   let newContact = await sendNewContact(handleContact);
   console.log("new Contact: " + newContact)
   console.log("new Contact id:" + newContact.id)
-
-  addContact(handleContact);
+  await updateHtml();
   closePopup();
-  refreshMainPage();
 }
 
 createContactBtn.addEventListener('click', e => {
