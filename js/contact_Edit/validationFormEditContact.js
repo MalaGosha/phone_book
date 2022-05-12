@@ -35,13 +35,13 @@ const checkEditPhoneNumber = (implementedDateContactList) => {
   return result;
 }
 
-const checkInputFormEditContact = () => {
+const checkInputFormEditContact = async () => {
   const newName = document.querySelector('#edit_name');
   const newSurname = document.querySelector('#edit_surname');
   const newPhoneNumber = document.querySelector('#edit_number');
   implementedDateContactList = [newName, newSurname, newPhoneNumber];
 
-  let contact = getContactById(idToEdit);
+  let contact = await getContact(idToEdit);
 
   let resultName = checkEditName(implementedDateContactList);
   if(resultName){

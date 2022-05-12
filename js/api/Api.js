@@ -52,15 +52,8 @@ async function deleteContactFromDB(id) {
     .then((response) => {
       console.log("Status deleted contact " + response.status);
     })
-   /* .then((response) => {
-      console.log(response.status)
-      return response.text()
-    })
-    .then((text) => {
-      console.log('deleted ' + text)
-      return text
-    });*/
 }
+
 /*
 
 async function editContact(id, contactWithNewData){

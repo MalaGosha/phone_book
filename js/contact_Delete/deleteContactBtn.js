@@ -11,10 +11,10 @@ const showPopupAboutEmptyPhoneBook = () => {
   })
 }
 
-const showPopupDeleteContact = () => {
+const showPopupDeleteContact = async () => {
   overlay.style.display = 'block';
   popupDeleteContact.style.display = 'block';
-  chooseContactToDelete();
+  await chooseContactToDelete();
 }
 
 const hidePopupDeleteContact = () => {

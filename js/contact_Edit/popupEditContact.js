@@ -35,7 +35,7 @@ const noEditForm = (editList) => {
   });
 }
 
-const writeDataToPopup = (areaContact) => {
+const writeDataToPopup = async (areaContact) => {
   id = getIdContactToEdit(areaContact);
 
   const editName = document.querySelector('#edit_name');
@@ -44,7 +44,7 @@ const writeDataToPopup = (areaContact) => {
   const currentDate = document.getElementById('current_date');
   editList = [editName, editSurname, editPhoneNumber];
 
-  contact = getContactById(id);
+  contact = await getContact(id);
   editName.placeholder = contact.name;
   editSurname.placeholder = contact.surname;
   editPhoneNumber.placeholder = contact.phoneNumber;

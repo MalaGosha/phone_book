@@ -28,12 +28,10 @@ async function chooseContactToDelete(){
   }
 }
 
-const searchContactToDelete = contact => {
+const searchContactToDelete = async contact => {
   showFilteredContactsToGrid(contact);
-  chooseContactToDelete();
+  await chooseContactToDelete();
 }
-
-
 
 searchPopup.addEventListener('keyup', searchContactToDelete);
 
