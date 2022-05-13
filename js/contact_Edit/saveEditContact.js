@@ -1,16 +1,16 @@
 const saveBtn = document.querySelector('.save');
 
-const closePopupEditForm = async () => {
+const closePopupEditForm = async (editedContact) => {
   clearAllErrorsEditForm();
-  await hidePopupFormToEdit();
+  await hidePopupFormToEdit(editedContact);
   await updateMainPage(); // listener to edit
 }
 
-const showSaveBtnAndEditDate = () => {
+const showSaveBtnAndEditDate = (areaContact) => {
   saveBtn.style.display = 'block';
   saveBtn.addEventListener('click', async () => {
-    await checkInputFormEditContact();
-    await showModificationDate();
+    await checkInputFormEditContact(areaContact);
+    await showModificationDate(areaContact);
   });
 }
 

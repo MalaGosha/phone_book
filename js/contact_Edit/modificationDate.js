@@ -12,7 +12,8 @@ function formatDate(date) {
   return [day, month, year].join('-');
 }
 
-showModificationDate = async () => {
+showModificationDate = async (areaContact) => {
+  let id = getIdFromAreaContact(areaContact)
   let contact = await getContactById(id);
   contact.modificationDate = Date.now();
   const editDate = document.querySelector('.lastModificationDate');

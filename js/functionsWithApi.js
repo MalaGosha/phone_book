@@ -22,3 +22,7 @@ function getIdByRecord(record) {
   return recordNumberToIdMap.get(record);
 }
 
+const getIdFromAreaContact = (areaContact) => {
+  let record = getRecordByContact(areaContact);
+  return getIdByRecord(record);
+}

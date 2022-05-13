@@ -35,12 +35,12 @@ const checkEditPhoneNumber = (editedContact) => {
   return result;
 }
 
-const checkInputFormEditContact = async () => {
-  const newName = document.querySelector('#edit_name');
-  const newSurname = document.querySelector('#edit_surname');
-  const newPhoneNumber = document.querySelector('#edit_number');
-  let editedContact = [newName, newSurname, newPhoneNumber];
-
+const  checkInputFormEditContact = async (areaContact) => {
+  let id = getIdFromAreaContact(areaContact);
+  let editedContact = getInputsToEdit();
+  let newName = editedContact[0];
+  let newSurname = editedContact[1];
+  let newPhoneNumber = editedContact[2];
 
   let contact = await getContactById(id);
 
@@ -62,8 +62,8 @@ const checkInputFormEditContact = async () => {
   if(resultName || newName.value === ''){
     if(resultSurname || newSurname.value === ''){
       if(resultPhoneNumber || newPhoneNumber.value === ''){
-        await editContactWithNewData(id, editedContact)
-        await closePopupEditForm();
+        await editContactWithNewData(id, contact)
+        await closePopupEditForm(editedContact);
       }
     }
   }
