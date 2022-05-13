@@ -20,7 +20,7 @@ const generateHTMLContactToDelete = (record, contact) => {
   areaContactsPopupDelete.innerHTML = innerHTML + `
       <div class="area_contactDelete">
         <i class="fas fa-trash-alt"></i>
-        <span style="display: none">${record}</span>
+        <span id="record" style="display: none">${record}</span>
         <span id="name"> ${contact.name}</span>
         <span id="surname"> ${contact.surname}</span>
         <span id="phone_number"> ${contact.phoneNumber}</span>
@@ -28,7 +28,7 @@ const generateHTMLContactToDelete = (record, contact) => {
     `
 }
 
-const generateHTMLConfirmContactToDelete = (record, contact) => {
+const generateStructureToConfirmFormDelete = (record, contact) => {
   const divContactToConfirmDelete = document.querySelector('#display_contact_to_delete');
   divContactToConfirmDelete.innerHTML = `
     <div>
@@ -52,8 +52,8 @@ async function updateMainPage() {
   let allContacts = await getAllContacts();
   clearHTMLAreaContacts();
   clearInputs();
-  sortArrayAscByName(allContacts)
-  generateStructure(allContacts);
+  sortArrayAscByName(allContacts);
+  generateStructureToMainPage(allContacts);
   listenerToContact();
 }
 

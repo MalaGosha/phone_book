@@ -14,6 +14,9 @@ const showPopupAboutEmptyPhoneBook = () => {
 const showPopupDeleteContact = async () => {
   overlay.style.display = 'block';
   popupDeleteContact.style.display = 'block';
+  let allContacts = await getAllContacts();
+  sortArrayAscByName(allContacts);
+  generateStructureToFormDelete(allContacts);
   await chooseContactToDelete();
 }
 
@@ -23,12 +26,12 @@ const hidePopupDeleteContact = () => {
   showPopupAboutEmptyPhoneBook();
 }
 
-const checkEmptyAreaContacts = () => {
+const checkEmptyAreaContacts = async () => {
   const areaContacts = document.querySelector('.area_contacts');
   if (areaContacts.innerHTML === '') {
     hidePopupDeleteContact();
   } else {
-    showPopupDeleteContact();
+    await showPopupDeleteContact();
   }
 }
 

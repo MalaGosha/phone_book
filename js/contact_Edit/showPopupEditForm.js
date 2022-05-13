@@ -21,8 +21,10 @@ const listenerToContact = () => {
   listAreaContacts.forEach(areaContact => {
     areaContact.addEventListener('click', async () => {
       let editList = getInputsToEdit();
-      await writeDataToPopupEditForm(areaContact, editList);
-      disabledFormEdit(areaContact, editList);
+      let record = getRecordByContact(areaContact);
+      let id = getIdByRecord(record);
+      await writeDataToPopupEditForm(id, editList);
+      disabledFormEdit(id, editList);
       showPopupFormEdit(editList);
     })
   })

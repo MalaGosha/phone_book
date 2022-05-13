@@ -1,9 +1,9 @@
-const changeDateInInput = (areaContact) => {
+const changeDateInInput = (id) => {
   const inputs = document.querySelectorAll('input');
   inputs.forEach(input => {
     input.addEventListener('keyup', () => {
       if (input.value !== '') {
-        showSaveBtnAndEditDate(areaContact);
+        showSaveBtnAndEditDate(id);
       } else {
         hideSaveBtn();
       }
@@ -19,7 +19,7 @@ const activeFormEdit = (editList) => {
   })
 }
 
-const disabledFormEdit = (areaContact, editList) => {
+const disabledFormEdit = (id, editList) => {
   editList.forEach(el => {
     if (el.value == '') {
       el.disabled = true;
@@ -28,7 +28,7 @@ const disabledFormEdit = (areaContact, editList) => {
   const editBtn = document.querySelector('.edit');
   editBtn.addEventListener('click', () => {
     activeFormEdit(editList);
-    changeDateInInput(areaContact);
+    changeDateInInput(id);
   });
 }
 
@@ -41,8 +41,7 @@ const getInputsToEdit = () => {
 }
 
 
-const writeDataToPopupEditForm = async (areaContact, editList) => {
-  let id = getIdFromAreaContact(areaContact);
+const writeDataToPopupEditForm = async (id, editList) => {
   let contact = await getContactById(id);
   const currentDate = document.getElementById('current_date');
   editList[0].placeholder = contact.name;

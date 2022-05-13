@@ -2,20 +2,24 @@ const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
 const deleteBtnConfirm = document.querySelector('.confirm');
 const escapeBtn = document.querySelector('.escape');
 
+function getRecordToDelete() {
+  const record = document.querySelector('#deleted_Id');
+  return record.innerHTML;
+}
+
 async function checkIdentityOfSurnames() {
   const inputConfirm = document.querySelector('#confirmSurname');
-  const deletedId = document.querySelector('#deleted_Id');
   let inputSurname = inputConfirm.value;
-  let id = deletedId.innerHTML;
-  let contactById = await getContactById(id);
+  let deletedRecordNumber = getRecordToDelete();
+  let id = getIdByRecord(deletedRecordNumber);
+  let contact = await getContactById(id);
 
-  if (inputSurname !== contactById.surname) {
+  if (inputSurname !== contact.surname) {
     showErrorCheckConfirm();
   } else {
     await deleteContactFromDB(id);
-    await updateMainPage();
+    await showPopupDeleteContact();
     closePopupConfirmSurname();
-    await chooseContactToDelete();
   }
   inputConfirm.addEventListener('click', clearErrorDeleteForm);
 }

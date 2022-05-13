@@ -6,11 +6,11 @@ const closePopupEditForm = async (editedContact) => {
   await updateMainPage(); // listener to edit
 }
 
-const showSaveBtnAndEditDate = (areaContact) => {
+const showSaveBtnAndEditDate = (id) => {
   saveBtn.style.display = 'block';
   saveBtn.addEventListener('click', async () => {
-    await checkInputFormEditContact(areaContact);
-    await showModificationDate(areaContact);
+    await checkInputFormEditContact(id);
+    await showModificationDate(id);
   });
 }
 

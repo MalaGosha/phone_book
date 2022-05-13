@@ -1,10 +1,12 @@
 const searchPopup = document.querySelector('.popup');
 const overlay2 = document.querySelector('.overlay2');
 
-const getIdContactToDelete = (divContact) => {
-  const idContactToDelete = divContact.querySelector('#id');
-  return idContactToDelete.innerHTML;
-  }
+const showPopupFormConfirmToDelete = () => {
+  const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
+  popupConfirmDelete.style.display = 'block';
+  overlay.style.display = 'block';
+  overlay2.style.display = 'block';
+}
 
 async function chooseContactToDelete(){
  const areaContactDelete = document.querySelectorAll('.area_contactDelete');
@@ -14,13 +16,11 @@ async function chooseContactToDelete(){
   } else {
     areaContactDelete.forEach(divContact => {
       divContact.addEventListener("click", async e => {
-        const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
-        popupConfirmDelete.style.display = 'block';
-        overlay.style.display = 'block';
-        overlay2.style.display = 'block';
-        let id = getIdContactToDelete(divContact);
+        let record = getRecordByContact(divContact);
+        let id = getIdByRecord(record);
         let contact = await getContactById(id);
-        generateHTMLConfirmContactToDelete(contact);
+        showPopupFormConfirmToDelete();
+        generateStructureToConfirmFormDelete(record, contact);
         clearErrorDeleteForm();
         clearInputs();
       });

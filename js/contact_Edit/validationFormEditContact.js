@@ -35,8 +35,7 @@ const checkEditPhoneNumber = (editedContact) => {
   return result;
 }
 
-const  checkInputFormEditContact = async (areaContact) => {
-  let id = getIdFromAreaContact(areaContact);
+const  checkInputFormEditContact = async (id) => {
   let editedContact = getInputsToEdit();
   let newName = editedContact[0];
   let newSurname = editedContact[1];
