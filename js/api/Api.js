@@ -54,10 +54,9 @@ async function deleteContactFromDB(id) {
     })
 }
 
-/*
 
-async function editContact(id, contactWithNewData){
-  return fetch('http://localhost:8080/contact/' + id, {
+async function editContactWithNewData(id, contactWithNewData){
+    return fetch('http://localhost:8080/contact/' + id, {
     method: PUT,
     headers: {
       'Accept': 'application/json',
@@ -66,7 +65,9 @@ async function editContact(id, contactWithNewData){
     body: JSON.stringify(contactWithNewData)
   })
     .then((response) => {
-
+      console.log("Status code put change one contact " + response.status)
+      console.log("edit successful" + id)
+      return response.json()
     })
+
 }
-*/

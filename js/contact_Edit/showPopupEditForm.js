@@ -2,8 +2,9 @@ const popupEdit = document.querySelector('.popup_edit');
 
 const showBackBtn = () => {
   const backBtn = document.querySelector('.back');
-  backBtn.addEventListener('click', () => {
-    backToMainPage();
+  backBtn.addEventListener('click', async () => {
+    hidePopupFormToEdit();
+    await updateMainPage();
   });
 }
 
@@ -15,12 +16,13 @@ const showPopupFormEdit = () => {
   showBackBtn();
 }
 
-const prepareContactToEdit = () => {
+const listenerToContact = () => {
   const listAreaContacts = document.querySelectorAll('.area_contact');
   listAreaContacts.forEach(areaContact => {
     areaContact.addEventListener('click', async () => {
-      await writeDataToPopupEditForm(areaContact);
       showPopupFormEdit();
-    });
+      //getInputsToEdit(areaContact);
+      await writeDataToPopupEditForm(areaContact);
+    })
   })
 }

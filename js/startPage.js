@@ -1,3 +1,3 @@
 window.onload = async function() {
-  await updateHtml();
+  await updateMainPage();
 }

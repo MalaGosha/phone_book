@@ -8,10 +8,10 @@ const hidePopup = () => {
   overlay2.style.display = 'none';
 }
 
-window.addEventListener('keydown', event => {
+window.addEventListener('keydown', async () => {
   if (event.key === 'Escape') {
     hidePopup();
     clearInputs();
-    prepareContactToEdit();
+    await updateMainPage(); // listenerToEditForm
   }
 })

@@ -13,7 +13,7 @@ async function checkIdentityOfSurnames() {
     showErrorCheckConfirm();
   } else {
     await deleteContactFromDB(id);
-    await updateHtml();
+    await updateMainPage();
     closePopupConfirmSurname();
     await chooseContactToDelete();
   }

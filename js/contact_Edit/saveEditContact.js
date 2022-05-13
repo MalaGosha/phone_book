@@ -1,9 +1,9 @@
 const saveBtn = document.querySelector('.save');
 
-const saveChangeInEditContact = async () => {
+const closePopupEditForm = async () => {
   clearAllErrorsEditForm();
-  await backToMainPage();
-  prepareContactToEdit();
+  await hidePopupFormToEdit();
+  await updateMainPage(); // listener to edit
 }
 
 const showSaveBtnAndEditDate = () => {

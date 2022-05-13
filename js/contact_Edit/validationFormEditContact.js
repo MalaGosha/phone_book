@@ -1,6 +1,6 @@
-const checkEditName = (implementedDateContactList) => {
+const checkEditName = (editedContact) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
-  let elementName = implementedDateContactList[0];
+  let elementName = editedContact[0];
   let result = regExpName.test(elementName.value);
 
   if (result || elementName.value === '') {
@@ -11,9 +11,9 @@ const checkEditName = (implementedDateContactList) => {
   return result;
 }
 
-const checkEditSurname = (implementedDateContactList) => {
+const checkEditSurname = (editedContact) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
-  let elementSurname = implementedDateContactList[1];
+  let elementSurname = editedContact[1];
   let result = regExpSurname.test(elementSurname.value);
   if (result  || elementSurname.value === '') {
     clearErrorEditForm(elementSurname);
@@ -23,9 +23,9 @@ const checkEditSurname = (implementedDateContactList) => {
   return result;
 }
 
-const checkEditPhoneNumber = (implementedDateContactList) => {
+const checkEditPhoneNumber = (editedContact) => {
   const regExpPhoneNumber = /^(.[0-9]{8}$)/;
-  let elementPhone = implementedDateContactList[2];
+  let elementPhone = editedContact[2];
   let result = regExpPhoneNumber.test(elementPhone.value);
   if (result || elementPhone.value === '') {
     clearErrorEditForm(elementPhone);
@@ -39,24 +39,22 @@ const checkInputFormEditContact = async () => {
   const newName = document.querySelector('#edit_name');
   const newSurname = document.querySelector('#edit_surname');
   const newPhoneNumber = document.querySelector('#edit_number');
-  implementedDateContactList = [newName, newSurname, newPhoneNumber];
+  let editedContact = [newName, newSurname, newPhoneNumber];
+
 
   let contact = await getContactById(id);
 
-  let resultName = checkEditName(implementedDateContactList);
+  let resultName = checkEditName(editedContact);
   if(resultName){
-    console.log(contact)
-    console.log(contact.name)
-    console.log(newName.value)
     contact.name = newName.value;
   }
 
-  let resultSurname = checkEditSurname(implementedDateContactList);
+  let resultSurname = checkEditSurname(editedContact);
   if(resultSurname) {
     contact.surname = newSurname.value;
   }
 
-  let resultPhoneNumber = checkEditPhoneNumber(implementedDateContactList);
+  let resultPhoneNumber = checkEditPhoneNumber(editedContact);
   if(resultPhoneNumber){
     contact.phoneNumber = newPhoneNumber.value;
   }
@@ -64,7 +62,8 @@ const checkInputFormEditContact = async () => {
   if(resultName || newName.value === ''){
     if(resultSurname || newSurname.value === ''){
       if(resultPhoneNumber || newPhoneNumber.value === ''){
-        saveChangeInEditContact();
+        await editContactWithNewData(id, editedContact)
+        await closePopupEditForm();
       }
     }
   }

@@ -28,7 +28,7 @@ async function createNewContact() {
   let newContact = await sendNewContact(handleContact);
   console.log("new Contact: " + newContact)
   console.log("new Contact id:" + newContact.id)
-  await updateHtml();
+  await updateMainPage();
   closePopup();
 }
 
