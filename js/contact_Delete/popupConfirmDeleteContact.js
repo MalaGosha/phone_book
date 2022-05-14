@@ -1,11 +1,12 @@
 const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
 const deleteBtnConfirm = document.querySelector('.confirm');
 const escapeBtn = document.querySelector('.escape');
+const inputConfirm = document.querySelector('#confirm');
 
 const checkConfirm = () => {
-  const inputConfirm = document.querySelector('#confirm');
-  const deletedId = document.querySelector('#deleted_Id');
+  inputConfirm.addEventListener('click', clearErrorDeleteForm);
   let inputSurname = inputConfirm.value;
+  const deletedId = document.querySelector('#deleted_Id');
   let id = deletedId.innerHTML;
   let contactById = getContactById(id);
 
@@ -17,14 +18,12 @@ const checkConfirm = () => {
   } else {
     showErrorCheckConfirm();
   }
-  inputConfirm.addEventListener('click', clearErrorDeleteForm);
 }
 
 const closePopupConfirm = () => {
   popupConfirmDelete.style.display = 'none';
-  overlay2.style.display = 'none';
+  overlaySecond.style.display = 'none';
   overlay.style.display = 'play';
-  const inputConfirm = document.querySelector('#confirm');
   inputConfirm.innerHTML = '';
 }
 

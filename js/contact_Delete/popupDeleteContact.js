@@ -1,27 +1,32 @@
 const searchPopup = document.querySelector('.popup');
-const overlay2 = document.querySelector('.overlay2');
+const overlaySecond = document.querySelector('.overlaySecond');
 
-const getIdContactToDelete = (divContact) => {
-  const idContactToDelete = divContact.querySelector('#id');
-  let id = idContactToDelete.innerHTML;
-  generateHTMLConfirmContactToDelete(id);
+const showPopupConfirmToDelete = () => {
+  const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
+  popupConfirmDelete.style.display = 'block';
+  overlay.style.display = 'block';
+  overlaySecond.style.display = 'block';
+}
+
+const getIdContactToDelete = (areaContact) => {
+  const idContactToDelete = areaContact.querySelector('#id');
+  return idContactToDelete.innerHTML;
 }
 
 const chooseContactToDelete = () => {
   const areaContactDelete = document.querySelectorAll('.area_contactDelete');
 
   if(areaContactDelete.length === 0) {
-    noShowPopupDeleteContact();
+    hidePopupDeleteContact();
   } else {
-    areaContactDelete.forEach(divContact => {
-      divContact.addEventListener("click", e => {
-        const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
-        popupConfirmDelete.style.display = 'block';
-        overlay.style.display = 'block';
-        overlay2.style.display = 'block';
-        getIdContactToDelete(divContact);
+    areaContactDelete.forEach(areaContact => {
+      areaContact.addEventListener("click", e => {
         clearErrorDeleteForm();
         clearInputs();
+        showPopupConfirmToDelete();
+        let id = getIdContactToDelete(areaContact);
+        generateHTMLConfirmContactToDelete(id);
+
       });
     })
   }
@@ -34,9 +39,9 @@ const searchContactToDelete = contact => {
 
 searchPopup.addEventListener('keyup', searchContactToDelete);
 
-overlay2.addEventListener('click', event => {
+overlaySecond.addEventListener('click', event => {
   popupConfirmDelete.style.display = 'none';
-  overlay2.style.display = 'block';
+  overlaySecond.style.display = 'block';
   popupDeleteContact.style.display = 'block';
   overlay.style.display = 'block';
 })

@@ -1,6 +1,5 @@
-const checkEditName = (implementedDateContactList) => {
+const checkEditName = (elementName) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
-  let elementName = implementedDateContactList[0];
   let result = regExpName.test(elementName.value);
 
   if (result || elementName.value === '') {
@@ -11,9 +10,8 @@ const checkEditName = (implementedDateContactList) => {
   return result;
 }
 
-const checkEditSurname = (implementedDateContactList) => {
+const checkEditSurname = (elementSurname) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
-  let elementSurname = implementedDateContactList[1];
   let result = regExpSurname.test(elementSurname.value);
   if (result  || elementSurname.value === '') {
     clearErrorEditForm(elementSurname);
@@ -23,9 +21,8 @@ const checkEditSurname = (implementedDateContactList) => {
   return result;
 }
 
-const checkEditPhoneNumber = (implementedDateContactList) => {
-  const regExpPhoneNumber = /^(.[0-9]{8}$)/;
-  let elementPhone = implementedDateContactList[2];
+const checkEditPhoneNumber = (elementPhone) => {
+  const regExpPhoneNumber = /^(.\d{8}$)/;
   let result = regExpPhoneNumber.test(elementPhone.value);
   if (result || elementPhone.value === '') {
     clearErrorEditForm(elementPhone);
@@ -35,38 +32,31 @@ const checkEditPhoneNumber = (implementedDateContactList) => {
   return result;
 }
 
-const checkInputFormEditContact = () => {
-  const newName = document.querySelector('#edit_name');
-  const newSurname = document.querySelector('#edit_surname');
-  const newPhoneNumber = document.querySelector('#edit_number');
-  implementedDateContactList = [newName, newSurname, newPhoneNumber];
+const checkInputFormEditContact = (editList) => {
+  let contact = getContactById(id);
+  let newName = editList[0];
+  let newSurname = editList[1];
+  let newPhoneNumber = editList[2];
 
-  let contact = getContactById(idToEdit);
-
-  let resultName = checkEditName(implementedDateContactList);
+  let resultName = checkEditName(newName);
   if(resultName){
-    console.log(contact)
-    console.log(contact.name)
-    console.log(newName.value)
     contact.name = newName.value;
   }
 
-  let resultSurname = checkEditSurname(implementedDateContactList);
+  let resultSurname = checkEditSurname(newSurname);
   if(resultSurname) {
     contact.surname = newSurname.value;
   }
 
-  let resultPhoneNumber = checkEditPhoneNumber(implementedDateContactList);
+  let resultPhoneNumber = checkEditPhoneNumber(newPhoneNumber);
   if(resultPhoneNumber){
     contact.phoneNumber = newPhoneNumber.value;
   }
 
-  if(resultName || newName.value === ''){
-    if(resultSurname || newSurname.value === ''){
-      if(resultPhoneNumber || newPhoneNumber.value === ''){
-        saveChangeInEditContact();
-      }
-    }
+  if((resultName || newName.value === '')
+    && (resultSurname || newSurname.value === '')
+    && (resultPhoneNumber || newPhoneNumber.value === '')){
+        saveChangeInEditContact(editList);
   }
 }
 

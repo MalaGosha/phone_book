@@ -2,7 +2,6 @@ const contactName = document.querySelector("#add_name");
 const contactSurname = document.querySelector("#add_surname");
 const contactPhoneNumber = document.querySelector("#add_number");
 const createContactBtn = document.querySelector('.create');
-
 let arrayDataAddContact = [contactName, contactSurname, contactPhoneNumber];
 
 const closePopup = () => {
@@ -17,7 +16,7 @@ const createNewContact = () => {
   let handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
   addContact(handleContact);
   closePopup();
-  refreshMainPage();
+  listenersToContact();
 }
 
 createContactBtn.addEventListener('click', e => {

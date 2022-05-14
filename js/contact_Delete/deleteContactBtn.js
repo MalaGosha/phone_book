@@ -2,13 +2,15 @@ const popupDeleteContact = document.querySelector('.popup_deleteContact');
 const deleteContactBtn = document.querySelector('.delete');
 const popupEmptyBook = document.querySelector('.empty_phoneBook');
 
+const hideOverlaySecond = () => {
+  overlay.style.display = 'none';
+  popupEmptyBook.style.display = 'none';
+}
+
 const showPopupAboutEmptyPhoneBook = () => {
   popupEmptyBook.style.display = 'block';
   overlay.style.display = 'block';
-  overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    popupEmptyBook.style.display = 'none';
-  })
+  overlay.addEventListener('click', hideOverlaySecond)
 }
 
 const showPopupDeleteContact = () => {
@@ -17,7 +19,7 @@ const showPopupDeleteContact = () => {
   chooseContactToDelete();
 }
 
-const noShowPopupDeleteContact = () => {
+const hidePopupDeleteContact = () => {
   overlay.style.display = 'none';
   popupDeleteContact.style.display = 'none';
   showPopupAboutEmptyPhoneBook();
@@ -26,7 +28,7 @@ const noShowPopupDeleteContact = () => {
 const checkEmptyAreaContacts = () => {
   const areaContacts = document.querySelector('.area_contacts');
   if (areaContacts.innerHTML === '') {
-    noShowPopupDeleteContact();
+    hidePopupDeleteContact();
   } else {
     showPopupDeleteContact();
   }

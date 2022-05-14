@@ -40,3 +40,8 @@ const clearInputs = () => {
     input.value = '';
   })
 }
+
+const clearHTMLAreaContacts = () => {
+  areaContacts.innerHTML = '';
+  areaContactsPopupDelete.innerHTML = '';
+}

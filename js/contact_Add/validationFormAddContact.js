@@ -1,6 +1,5 @@
-const checkName = (arrayDataAddContact) => {
+const checkName = (elementName) => {
   const regExpName = /^([A-Z][a-z]{2,15}$)/;
-  let elementName = arrayDataAddContact[0];
   let result = regExpName.test(elementName.value);
   if (result) {
     clearErrorAddForm(elementName);
@@ -10,9 +9,8 @@ const checkName = (arrayDataAddContact) => {
   return result;
 }
 
-const checkSurname = (arrayDataAddContact) => {
+const checkSurname = (elementSurname) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
-  let elementSurname = arrayDataAddContact[1];
   let result = regExpSurname.test(elementSurname.value);
   if (result) {
     clearErrorAddForm(elementSurname);
@@ -22,9 +20,8 @@ const checkSurname = (arrayDataAddContact) => {
   return result;
 }
 
-const checkPhoneNumber = (arrayDataAddContact) => {
-  const regExpPhoneNumber = /^(.[0-9]{8}$)/;
-  let elementPhone = arrayDataAddContact[2];
+const checkPhoneNumber = (elementPhone) => {
+  const regExpPhoneNumber = /^(.\d{8}$)/;
   let result = regExpPhoneNumber.test(elementPhone.value);
   if (result) {
     clearErrorAddForm(elementPhone);
@@ -34,9 +31,9 @@ const checkPhoneNumber = (arrayDataAddContact) => {
   return result;
 }
 const checkInputFormAddContact = (arrayDataAddContact) => {
-  let resultName = checkName(arrayDataAddContact);
-  let resultSurname = checkSurname(arrayDataAddContact);
-  let resultPhoneNumber = checkPhoneNumber(arrayDataAddContact);
+  let resultName = checkName(arrayDataAddContact[0]);
+  let resultSurname = checkSurname(arrayDataAddContact[1]);
+  let resultPhoneNumber = checkPhoneNumber(arrayDataAddContact[2]);
 
   if (resultName && resultSurname && resultPhoneNumber === true){
     createNewContact();

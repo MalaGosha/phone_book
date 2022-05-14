@@ -21,8 +21,8 @@ class Contact {
 }
 
 function getContactById(id){
-  let filter = contactsList.filter(el => el.id == id);// zwróci liste z 1 kontaktem
-  return filter[0]; //pobieramy ten kontakt
+  let filter = contactsList.filter(el => el.id == id);
+  return filter[0];
 }
 
 function addContact(contact) {

@@ -1,7 +1,6 @@
 const areaContacts = document.querySelector('.area_contacts');
 const areaContactsPopupDelete = document.querySelector('.popupDelete');
 
-
 const generateHTMLContact = (list) => {
   let counter = 0;
   list.forEach(contact => {
@@ -49,17 +48,13 @@ const generateHTMLConfirmContactToDelete = (id) => {
   `;
 }
 
-const clearHTMLAreaContacts = () => {
-  areaContacts.innerHTML = '';
-  areaContactsPopupDelete.innerHTML = '';
-}
-
 function updateHtml() {
   let contactList = getContactList();
   clearHTMLAreaContacts();
   contactList.sort((a, b) => a.name.localeCompare(b.name))
   generateHTMLContact(contactList);
   generateHTMLContactToDelete(contactList);
+  listenersToContact();
 }
 
 

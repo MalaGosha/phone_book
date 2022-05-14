@@ -1,15 +1,14 @@
-let editList = [];
-let contact;
-let idToEdit;
-let implementedDateContactList = [];
-let id;
+const getIdContactToEdit = (areaContact) => {
+  const idContactToEdit = areaContact.querySelector('#id');
+  return idContactToEdit.innerHTML;
+}
 
-const changeDateInInput = () => {
+const changeDateInInput = (editList) => {
   const inputs = document.querySelectorAll('input');
   inputs.forEach(input => {
     input.addEventListener('keyup', () => {
       if (input.value !== '') {
-        showSaveBtnAndEditDate();
+        showSaveBtnAndEditDate(editList);
       } else {
         hideSaveBtn();
       }
@@ -31,41 +30,37 @@ const noEditForm = (editList) => {
         el.disabled = false;
       }
     })
-    changeDateInInput();
+    changeDateInInput(editList);
   });
+}
+
+const getInputsToEditForm = () => {
+  const editName = document.querySelector('#edit_name');
+  const editSurname = document.querySelector('#edit_surname');
+  const editPhoneNumber = document.querySelector('#edit_number');
+  return [editName, editSurname, editPhoneNumber];
 }
 
 const writeDataToPopup = (areaContact) => {
   id = getIdContactToEdit(areaContact);
-  const editName = document.querySelector('#edit_name');
-  const editSurname = document.querySelector('#edit_surname');
-  const editPhoneNumber = document.querySelector('#edit_number');
-  const currentDate = document.getElementById('current_date');
-  editList = [editName, editSurname, editPhoneNumber];
-
   contact = getContactById(id);
-  editName.placeholder = contact.name;
-  editSurname.placeholder = contact.surname;
-  editPhoneNumber.placeholder = contact.phoneNumber;
+  let editList = getInputsToEditForm();
+
+  editList[0].placeholder = contact.name;
+  editList[1].placeholder = contact.surname;
+  editList[2].placeholder = contact.phoneNumber;
+  const currentDate = document.getElementById('current_date');
   currentDate.innerHTML = contact.createDate;
-  console.log("contact.createDate " + contact.createDate);
-  noEditForm(editList);
 }
 
-const getIdContactToEdit = (areaContact) => {
-  const idContactToEdit = areaContact.querySelector('#id');
-  idToEdit = idContactToEdit.innerHTML;
-  return idToEdit;
-}
-
-const backToMainPage = () => {
+const backToMainPage = (editList) => {
   const popupEdit = document.querySelector('.popup_edit');
   popupEdit.style.display = 'none';
   overlay.style.display = 'none';
-  implementedDateContactList.forEach(elList => {
+  editList.forEach(elList => {
     elList.value = '';
   })
-  refreshMainPage();
+  listenersToContact();
 }
 
 

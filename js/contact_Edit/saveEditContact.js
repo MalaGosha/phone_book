@@ -1,16 +1,15 @@
 const saveBtn = document.querySelector('.save');
 
-const saveChangeInEditContact = () => {
+const saveChangeInEditContact = (editList) => {
   clearAllErrorsEditForm();
   updateHtml();
-  backToMainPage();
-  refreshMainPage();
+  backToMainPage(editList);
 }
 
-const showSaveBtnAndEditDate = () => {
+const showSaveBtnAndEditDate = (editList) => {
   saveBtn.style.display = 'block';
   saveBtn.addEventListener('click', () => {
-    checkInputFormEditContact();
+    checkInputFormEditContact(editList);
     showModificationDate();
   });
 }
