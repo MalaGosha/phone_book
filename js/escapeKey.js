@@ -12,6 +12,7 @@ window.addEventListener('keydown', async event => {
   if (event.key === 'Escape') {
     hidePopup();
     clearInputs();
-    await updateMainPage();
+    let allContacts = await sortAllContactsToForm();
+    await updateMainPageWithSortAllContacts(allContacts);
   }
 })

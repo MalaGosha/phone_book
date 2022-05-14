@@ -16,18 +16,6 @@ async function sendNewContact(handleContact) {
   });
 }
 
-async function getAllContacts() {
-  return fetch('http://localhost:8080/contact/all', {
-    headers: {
-      'Accept': 'application/json',
-      "Content-Type": "application/json"
-    }
-  }).then((response) => {
-    console.log("Status code get array " + response.status)
-    return response.json()
-  });
-}
-
 async function getContactById(id) {
   return fetch('http://localhost:8080/contact/' + id,{
     headers: {
@@ -65,4 +53,28 @@ async function editContactWithNewData(id, contactWithNewData){
       console.log("edit successful" + id)
       return response.json()
     })
+}
+
+async function getAscAllContact(){
+  return fetch('http://localhost:8080/contact/all/asc',{
+    headers: {
+      'Accept': 'application/json',
+      "Content-Type": "application/json"
+    }
+  }).then((response) =>{
+    console.log("Status code get asc all contacts" + response.status)
+    return response.json()
+  })
+}
+
+async function getDescAllContact(){
+  return fetch('http://localhost:8080/contact/all/desc',{
+    headers: {
+      'Accept': 'application/json',
+      "Content-Type": "application/json"
+    }
+  }).then((response) =>{
+    console.log("Status code get desc all contacts" + response.status)
+    return response.json()
+  })
 }

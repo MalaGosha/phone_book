@@ -55,7 +55,6 @@ const hidePopupFormToEdit = (editList) => {
   editList.forEach(elList => {
     elList.value = '';
   })
-  clearHTMLAreaContacts();
 }
 
 

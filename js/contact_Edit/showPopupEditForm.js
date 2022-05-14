@@ -4,7 +4,8 @@ const showBackBtn = (editList) => {
   const backBtn = document.querySelector('.back');
   backBtn.addEventListener('click', async () => {
     hidePopupFormToEdit(editList);
-    await updateMainPage();
+    let allContacts = await sortAllContactsToForm();
+    await updateMainPageWithSortAllContacts(allContacts);
   });
 }
 

@@ -14,8 +14,8 @@ const showPopupAboutEmptyPhoneBook = () => {
 const showPopupDeleteContact = async () => {
   overlay.style.display = 'block';
   popupDeleteContact.style.display = 'block';
-  let allContacts = await getAllContacts();
-  sortArrayAscByName(allContacts);
+  // let allContacts = await getAllContacts();
+  let allContacts = await sortAllContactsToForm()
   generateStructureToFormDelete(allContacts);
   await chooseContactToDelete();
 }

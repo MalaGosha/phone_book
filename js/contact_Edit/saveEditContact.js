@@ -3,7 +3,8 @@ const saveBtn = document.querySelector('.save');
 const closePopupEditForm = async (editedContact) => {
   clearAllErrorsEditForm();
   await hidePopupFormToEdit(editedContact);
-  await updateMainPage();
+  let allContacts = await sortAllContactsToForm();
+  await updateMainPageWithSortAllContacts(allContacts);
 }
 
 const showSaveAndEditDate = (id) => {

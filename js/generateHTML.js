@@ -43,16 +43,17 @@ const clearHTMLAreaContacts = () => {
   areaContactsPopupDelete.innerHTML = '';
 }
 
-function sortArrayAscByName(array) {
-  array.sort((a, b) => a.name.localeCompare(b.name))
-}
-
 async function updateMainPage() {
-  let allContacts = await getAllContacts();
+  let allContacts = await getAscAllContact();
   clearHTMLAreaContacts();
   clearInputs();
-  sortArrayAscByName(allContacts);
   generateStructureToMainPage(allContacts);
   listenersToContacts();
 }
 
+async function updateMainPageWithSortAllContacts(arrayContacts) {
+  clearHTMLAreaContacts();
+  clearInputs();
+  generateStructureToMainPage(arrayContacts);
+  listenersToContacts();
+}
