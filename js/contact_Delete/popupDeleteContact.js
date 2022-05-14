@@ -1,11 +1,11 @@
 const searchPopup = document.querySelector('.popup');
-const overlay2 = document.querySelector('.overlay2');
+const overlaySecond = document.querySelector('.overlay_second');
 
 const showPopupFormConfirmToDelete = () => {
   const popupConfirmDelete = document.querySelector('.popup_confirmDelete');
   popupConfirmDelete.style.display = 'block';
   overlay.style.display = 'block';
-  overlay2.style.display = 'block';
+  overlaySecond.style.display = 'block';
 }
 
 async function chooseContactToDelete(){
@@ -14,9 +14,9 @@ async function chooseContactToDelete(){
   if(areaContactDelete.length === 0) {
     hidePopupDeleteContact();
   } else {
-    areaContactDelete.forEach(divContact => {
-      divContact.addEventListener("click", async e => {
-        let record = getRecordByContact(divContact);
+    areaContactDelete.forEach(areaContact => {
+      areaContact.addEventListener("click", async () => {
+        let record = getRecordByAreaContact(areaContact);
         let id = getIdByRecord(record);
         let contact = await getContactById(id);
         showPopupFormConfirmToDelete();
@@ -35,9 +35,9 @@ const searchContactToDelete = async contact => {
 
 searchPopup.addEventListener('keyup', searchContactToDelete);
 
-overlay2.addEventListener('click', event => {
+overlaySecond.addEventListener('click', () => {
   popupConfirmDelete.style.display = 'none';
-  overlay2.style.display = 'block';
+  overlaySecond.style.display = 'block';
   popupDeleteContact.style.display = 'block';
   overlay.style.display = 'block';
 })

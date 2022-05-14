@@ -3,10 +3,10 @@ const saveBtn = document.querySelector('.save');
 const closePopupEditForm = async (editedContact) => {
   clearAllErrorsEditForm();
   await hidePopupFormToEdit(editedContact);
-  await updateMainPage(); // listener to edit
+  await updateMainPage();
 }
 
-const showSaveBtnAndEditDate = (id) => {
+const showSaveAndEditDate = (id) => {
   saveBtn.style.display = 'block';
   saveBtn.addEventListener('click', async () => {
     await checkInputFormEditContact(id);

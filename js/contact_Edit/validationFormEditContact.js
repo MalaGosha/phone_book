@@ -6,7 +6,7 @@ const checkEditName = (editedContact) => {
   if (result || elementName.value === '') {
     clearErrorEditForm(elementName);
   } else {
-    showErrorCheckEditContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej liter')  ;
+    showErrorCheckEditContact(elementName, 'Nadaj imię składające się od 3 do 15 liter zaczynajace sie z wielkiej liter');
   }
   return result;
 }
@@ -15,7 +15,7 @@ const checkEditSurname = (editedContact) => {
   const regExpSurname = /^([A-Z][a-z]{2,30}$)/;
   let elementSurname = editedContact[1];
   let result = regExpSurname.test(elementSurname.value);
-  if (result  || elementSurname.value === '') {
+  if (result || elementSurname.value === '') {
     clearErrorEditForm(elementSurname);
   } else {
     showErrorCheckEditContact(elementSurname, 'Nadaj nazwisko składające się od 3 do 20 liter');
@@ -35,7 +35,7 @@ const checkEditPhoneNumber = (editedContact) => {
   return result;
 }
 
-const  checkInputFormEditContact = async (id) => {
+const checkInputFormEditContact = async (id) => {
   let editedContact = getInputsToEdit();
   let newName = editedContact[0];
   let newSurname = editedContact[1];
@@ -44,27 +44,25 @@ const  checkInputFormEditContact = async (id) => {
   let contact = await getContactById(id);
 
   let resultName = checkEditName(editedContact);
-  if(resultName){
+  if (resultName) {
     contact.name = newName.value;
   }
 
   let resultSurname = checkEditSurname(editedContact);
-  if(resultSurname) {
+  if (resultSurname) {
     contact.surname = newSurname.value;
   }
 
   let resultPhoneNumber = checkEditPhoneNumber(editedContact);
-  if(resultPhoneNumber){
+  if (resultPhoneNumber) {
     contact.phoneNumber = newPhoneNumber.value;
   }
 
-  if(resultName || newName.value === ''){
-    if(resultSurname || newSurname.value === ''){
-      if(resultPhoneNumber || newPhoneNumber.value === ''){
-        await editContactWithNewData(id, contact)
-        await closePopupEditForm(editedContact);
-      }
-    }
+  if ((resultName || newName.value === '')
+    && (resultSurname || newSurname.value === '')
+    && (resultPhoneNumber || newPhoneNumber.value === '')) {
+    await editContactWithNewData(id, contact)
+    await closePopupEditForm(editedContact);
   }
 }
 

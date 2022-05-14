@@ -25,7 +25,7 @@ const clearErrorEditForm = (inputEl) => {
 }
 
 const clearAllErrorsEditForm = () => {
-  const errors = document.querySelectorAll('.editForm');
+  const errors = document.querySelectorAll('.editErrorForm');
   errors.forEach(el => {
     el.style.display = 'none';
     el.innerHTML = '';
@@ -36,7 +36,7 @@ const clearInputs = () => {
   searchPopup.innerHTML = '';
   search.innerHTML = '';
   const inputs = document.querySelectorAll('input');
-  inputs.forEach(input =>{
+  inputs.forEach(input => {
     input.value = '';
   })
 }

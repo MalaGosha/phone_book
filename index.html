@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js" lang="">
+
+<html class="no-js" lang="pl">
 
 <head>
   <meta charset="utf-8">
@@ -32,7 +33,7 @@
   <div class="area_contacts popupDelete"></div>
 </div>
 
-<div class="overlay2"></div>
+<div class="overlay_second"></div>
 
 <div class="popup_confirmDelete">
   <div id="display_contact_to_delete"></div>
@@ -45,8 +46,6 @@
     <button class="escape" type="submit"><i class="fas fa-arrow-left"></i> Wyjdź</button>
     <button class="delete confirm" type="submit"><i class="fas fa-trash-alt"></i> Usuń kontakt</button>
   </div>
-</div>
-
 </div>
 
 <div class="popup_addContact">
@@ -77,18 +76,18 @@
     <form class="editContact">
       <div class="form_box">
         <label for="edit_name">Imię:</label>
-        <input type="text" id="edit_name" placeholder="Wpisz imię kontaktu"/>
-        <p class="error editForm"></p>
+        <input id="edit_name" type="text" placeholder="Wpisz imię kontaktu"/>
+        <p class="error editErrorForm"></p>
       </div>
       <div class="form_box">
         <label for="edit_surname">Nazwisko: </label>
-        <input type="text" id="edit_surname" placeholder="Wpisz nazwisko kontaktu"/>
-        <p class="error editForm"></p>
+        <input id="edit_surname" type="text" placeholder="Wpisz nazwisko kontaktu"/>
+        <p class="error editErrorForm"></p>
       </div>
       <div class="form_box">
         <label for="edit_number">Numer telefonu:</label>
         <input id="edit_number" placeholder="Wpisz numer telefonu kontaktu"/>
-        <p class="error editForm"></p>
+        <p class="error editErrorForm"></p>
       </div>
     </form>
     <div class="date">
@@ -111,7 +110,7 @@
 <script src="js/startPage.js" async></script>
 <script src="js/classes/Contact.js" async></script>
 <script src="js/api/Api.js" async></script>
-<script src="js/functionsWithApi.js" async></script>
+<script src="js/api/functionsWithApi.js" async></script>
 <script src="js/contact_Add/addContactBtn.js" async></script>
 <script src="js/clear.js" async></script>
 <script src="js/contact_Delete/deleteContactBtn.js" async></script>
@@ -126,7 +125,7 @@
 <script src="js/searchContact.js" async></script>
 <script src="js/contact_Add/validationFormAddContact.js" async></script>
 <script src="js/contact_Edit/validationFormEditContact.js" async></script>
-<script src="js/refresh.js" async></script>
+<script src="js/contact_Add/refresh.js" async></script>
 <script src="js/escapeKey.js" async></script>
 <script src="js/contact_Edit/modificationDate.js" async></script>
 

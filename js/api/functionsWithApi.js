@@ -24,7 +24,7 @@ function generateStructureToFormDelete(allContacts) {
   }
 }
 
-function getRecordByContact(areaContact) {
+function getRecordByAreaContact(areaContact) {
   const record = areaContact.querySelector('#record');
   return record.innerHTML;
 }

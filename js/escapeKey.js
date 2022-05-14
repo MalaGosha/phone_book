@@ -5,13 +5,13 @@ const hidePopup = () => {
   popupEmptyBook.style.display = 'none';
   popupEdit.style.display = 'none';
   overlay.style.display = 'none';
-  overlay2.style.display = 'none';
+  overlaySecond.style.display = 'none';
 }
 
-window.addEventListener('keydown', async () => {
+window.addEventListener('keydown', async event => {
   if (event.key === 'Escape') {
     hidePopup();
     clearInputs();
-    await updateMainPage(); // listenerToEditForm
+    await updateMainPage();
   }
 })

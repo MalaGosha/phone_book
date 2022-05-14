@@ -2,7 +2,6 @@ const search = document.querySelector('.search');
 
 const searchContact = e => {
   const areaContact = document.querySelectorAll('.area_contact');
-
   const searchValue = e.target.value.toLowerCase();
 
   areaContact.forEach(el => {
@@ -12,7 +11,6 @@ const searchContact = e => {
       el.style.display = 'none';
     }
   })
-
 }
 
 const showFilteredContactsToGrid = e => {
@@ -26,7 +24,6 @@ const showFilteredContactsToGrid = e => {
       el.style.display = 'none';
     }
   })
-
 }
 
 search.addEventListener('keyup', searchContact);

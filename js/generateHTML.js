@@ -1,7 +1,6 @@
 const areaContacts = document.querySelector('.area_contacts');
 const areaContactsPopupDelete = document.querySelector('.popupDelete');
 
-
 const generateHTMLContact = (record, contact) => {
   let innerHTML = areaContacts.innerHTML
   areaContacts.innerHTML = innerHTML + `
@@ -54,6 +53,6 @@ async function updateMainPage() {
   clearInputs();
   sortArrayAscByName(allContacts);
   generateStructureToMainPage(allContacts);
-  listenerToContact();
+  listenersToContacts();
 }
 

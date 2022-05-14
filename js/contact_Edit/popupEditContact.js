@@ -1,9 +1,9 @@
-const changeDateInInput = (id) => {
+const changeDataInInput = (id) => {
   const inputs = document.querySelectorAll('input');
   inputs.forEach(input => {
     input.addEventListener('keyup', () => {
       if (input.value !== '') {
-        showSaveBtnAndEditDate(id);
+        showSaveAndEditDate(id);
       } else {
         hideSaveBtn();
       }
@@ -28,7 +28,7 @@ const disabledFormEdit = (id, editList) => {
   const editBtn = document.querySelector('.edit');
   editBtn.addEventListener('click', () => {
     activeFormEdit(editList);
-    changeDateInInput(id);
+    changeDataInInput(id);/*date??? no data??*/
   });
 }
 
@@ -36,10 +36,8 @@ const getInputsToEdit = () => {
   const editName = document.querySelector('#edit_name');
   const editSurname = document.querySelector('#edit_surname');
   const editPhoneNumber = document.querySelector('#edit_number');
-  let editList = [editName, editSurname, editPhoneNumber];
-  return editList;
+  return [editName, editSurname, editPhoneNumber];
 }
-
 
 const writeDataToPopupEditForm = async (id, editList) => {
   let contact = await getContactById(id);

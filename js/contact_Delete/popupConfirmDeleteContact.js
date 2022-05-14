@@ -9,6 +9,7 @@ function getRecordToDelete() {
 
 async function checkIdentityOfSurnames() {
   const inputConfirm = document.querySelector('#confirmSurname');
+  inputConfirm.addEventListener('click', clearErrorDeleteForm);
   let inputSurname = inputConfirm.value;
   let deletedRecordNumber = getRecordToDelete();
   let id = getIdByRecord(deletedRecordNumber);
@@ -21,12 +22,11 @@ async function checkIdentityOfSurnames() {
     await showPopupDeleteContact();
     closePopupConfirmSurname();
   }
-  inputConfirm.addEventListener('click', clearErrorDeleteForm);
 }
 
 const closePopupConfirmSurname = () => {
   popupConfirmDelete.style.display = 'none';
-  overlay2.style.display = 'none';
+  overlaySecond.style.display = 'none';
   overlay.style.display = 'play';
   const inputConfirm = document.querySelector('#confirmSurname');
   inputConfirm.innerHTML = '';

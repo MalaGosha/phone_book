@@ -40,7 +40,6 @@ async function getContactById(id) {
   });
 }
 
-
 async function deleteContactFromDB(id) {
   return fetch('http://localhost:8080/contact/' + id, {
     method: DELETE,
@@ -48,12 +47,10 @@ async function deleteContactFromDB(id) {
       'Accept': 'application/json',
       "Content-Type": "application/json"
     }
-  })
-    .then((response) => {
+  }).then((response) => {
       console.log("Status deleted contact " + response.status);
     })
 }
-
 
 async function editContactWithNewData(id, contactWithNewData){
     return fetch('http://localhost:8080/contact/' + id, {
@@ -63,11 +60,9 @@ async function editContactWithNewData(id, contactWithNewData){
       "Content-Type": "application/json"
     },
     body: JSON.stringify(contactWithNewData)
-  })
-    .then((response) => {
+  }).then((response) => {
       console.log("Status code put change one contact " + response.status)
       console.log("edit successful" + id)
       return response.json()
     })
-
 }

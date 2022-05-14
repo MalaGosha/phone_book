@@ -16,12 +16,12 @@ const showPopupFormEdit = (editList) => {
   showBackBtn(editList);
 }
 
-const listenerToContact = () => {
-  const listAreaContacts = document.querySelectorAll('.area_contact');
-  listAreaContacts.forEach(areaContact => {
+const listenersToContacts = () => {
+  const areaContactList = document.querySelectorAll('.area_contact');
+  areaContactList.forEach(areaContact => {
     areaContact.addEventListener('click', async () => {
       let editList = getInputsToEdit();
-      let record = getRecordByContact(areaContact);
+      let record = getRecordByAreaContact(areaContact);
       let id = getIdByRecord(record);
       await writeDataToPopupEditForm(id, editList);
       disabledFormEdit(id, editList);
