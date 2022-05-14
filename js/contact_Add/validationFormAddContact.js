@@ -21,14 +21,20 @@ const checkSurname = (elementSurname) => {
 }
 
 const checkPhoneNumber = (elementPhone) => {
-  const regExpPhoneNumber = /^(.\d{8}$)/;
-  let result = regExpPhoneNumber.test(elementPhone.value);
-  if (result) {
-    clearErrorAddForm(elementPhone);
+  let phoneNumberToNumber = parseInt(elementPhone.value)
+  if(phoneNumberToNumber){
+    const regExpPhoneNumber = /^(.\d{8}$)/;
+    let result = regExpPhoneNumber.test(elementPhone.value);
+    if (result) {
+      clearErrorAddForm(elementPhone);
+    } else {
+      showErrorCheckAddContact(elementPhone, 'Nadaj 9 cyfrowy numer telefonu')
+    }
+    return result;
   } else {
-    showErrorCheckAddContact(elementPhone, 'Nadaj 9 cyfrowy numer telefonu')
+    showErrorCheckAddContact(elementPhone, "Podaj wyłącznie cyfry")
   }
-  return result;
+
 }
 const checkInputFormAddContact = (arrayDataAddContact) => {
   let resultName = checkName(arrayDataAddContact[0]);
