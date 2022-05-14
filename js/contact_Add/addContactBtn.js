@@ -9,4 +9,3 @@ const showPopupAddContact = () => {
 }
 
 addContactBtn.addEventListener('click', showPopupAddContact);
-

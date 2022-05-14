@@ -34,7 +34,3 @@ const closePopupConfirmSurname = () => {
 
 deleteBtnConfirm.addEventListener('click', checkIdentityOfSurnames);
 escapeBtn.addEventListener('click', closePopupConfirmSurname);
-
-
-
-

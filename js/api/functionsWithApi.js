@@ -32,4 +32,3 @@ function getRecordByAreaContact(areaContact) {
 function getIdByRecord(record) {
   return recordNumberToIdMap.get(record);
 }
-

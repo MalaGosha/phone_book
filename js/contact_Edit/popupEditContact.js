@@ -56,6 +56,3 @@ const hidePopupFormToEdit = (editList) => {
     elList.value = '';
   })
 }
-
-
-

@@ -15,4 +15,3 @@ class Contact {
     this.modificationDate = null;
   }
 }
-

@@ -65,5 +65,3 @@ const checkInputFormEditContact = async (id) => {
     await closePopupEditForm(editedContact);
   }
 }
-
-

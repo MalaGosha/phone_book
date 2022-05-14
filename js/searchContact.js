@@ -27,17 +27,3 @@ const showFilteredContactsToGrid = e => {
 }
 
 search.addEventListener('keyup', searchContact);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
