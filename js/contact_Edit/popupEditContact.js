@@ -43,7 +43,7 @@ const getInputsToEditForm = () => {
 
 const writeDataToPopup = (areaContact) => {
   id = getIdContactToEdit(areaContact);
-  contact = getContactById(id);
+  let contact = getContactById(id);
   let editList = getInputsToEditForm();
 
   editList[0].placeholder = contact.name;
