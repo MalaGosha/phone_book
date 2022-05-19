@@ -4,7 +4,7 @@ const contactPhoneNumber = document.querySelector("#add_number");
 const createContactBtn = document.querySelector('.create');
 let arrayDataAddContact = [contactName, contactSurname, contactPhoneNumber];
 
-const closePopup = () => {
+const closePopupAddContact = () => {
   popupAddContact.style.display = 'none';
   overlay.style.display = 'none';
   arrayDataAddContact.forEach(elementData => {
@@ -15,7 +15,7 @@ const closePopup = () => {
 const createNewContact = () => {
   let handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
   addContact(handleContact);
-  closePopup();
+  closePopupAddContact();
   listenersToContact();
 }
 

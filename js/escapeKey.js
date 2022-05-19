@@ -1,4 +1,4 @@
-const hidePopup = () => {
+const hidePopups = () => {
   popupAddContact.style.display = 'none';
   popupDeleteContact.style.display = 'none';
   popupConfirmDelete.style.display = 'none';
@@ -10,8 +10,15 @@ const hidePopup = () => {
 
 window.addEventListener('keydown', event => {
   if (event.key === 'Escape') {
-    hidePopup();
+    hidePopups();
     clearInputs();
     listenersToContact();
   }
 })
+
+
+overlay.addEventListener('click', async() => {
+  closePopupAddContact();
+  hidePopups();
+  clearInputs();
+});

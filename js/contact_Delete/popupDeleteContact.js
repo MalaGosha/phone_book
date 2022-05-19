@@ -41,7 +41,7 @@ searchPopup.addEventListener('keyup', searchContactToDelete);
 
 overlaySecond.addEventListener('click', event => {
   popupConfirmDelete.style.display = 'none';
-  overlaySecond.style.display = 'block';
+  overlaySecond.style.display = 'none';
   popupDeleteContact.style.display = 'block';
   overlay.style.display = 'block';
 })

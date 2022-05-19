@@ -23,7 +23,7 @@ const checkConfirm = () => {
 const closePopupConfirm = () => {
   popupConfirmDelete.style.display = 'none';
   overlaySecond.style.display = 'none';
-  overlay.style.display = 'play';
+  overlay.style.display = 'block';
   inputConfirm.innerHTML = '';
 }
 
