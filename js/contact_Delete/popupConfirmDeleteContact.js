@@ -27,7 +27,7 @@ async function checkIdentityOfSurnames() {
 const closePopupConfirmSurname = () => {
   popupConfirmDelete.style.display = 'none';
   overlaySecond.style.display = 'none';
-  overlay.style.display = 'play';
+  overlay.style.display = 'block';
   const inputConfirm = document.querySelector('#confirmSurname');
   inputConfirm.innerHTML = '';
 }

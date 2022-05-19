@@ -1,4 +1,4 @@
-const hidePopup = () => {
+const hidePopups = () => {
   popupAddContact.style.display = 'none';
   popupDeleteContact.style.display = 'none';
   popupConfirmDelete.style.display = 'none';
@@ -10,9 +10,17 @@ const hidePopup = () => {
 
 window.addEventListener('keydown', async event => {
   if (event.key === 'Escape') {
-    hidePopup();
+    hidePopups();
     clearInputs();
     let allContacts = await sortAllContactsToForm();
     await updateMainPageWithSortAllContacts(allContacts);
   }
 })
+
+overlay.addEventListener('click', async() => {
+  closePopupAddContact();
+  hidePopups();
+  clearInputs();
+  let allContacts = await sortAllContactsToForm();
+  await updateMainPageWithSortAllContacts(allContacts);
+});

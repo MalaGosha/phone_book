@@ -6,7 +6,7 @@ const createContactBtn = document.querySelector('.create');
 let handleContact;
 let arrayDataAddContact = [contactName, contactSurname, contactPhoneNumber];
 
-const closePopup = () => {
+const closePopupAddContact = () => {
   popupAddContact.style.display = 'none';
   overlay.style.display = 'none';
   arrayDataAddContact.forEach(elementData => {
@@ -18,10 +18,12 @@ async function createNewContact() {
   handleContact = new Contact(contactName.value, contactSurname.value, contactPhoneNumber.value);
   await sendNewContact(handleContact);
   await updateMainPage();
-  closePopup();
+  closePopupAddContact();
 }
 
 createContactBtn.addEventListener('click', async e => {
   e.preventDefault();
   await addOneContact(arrayDataAddContact);
 });
+
+
